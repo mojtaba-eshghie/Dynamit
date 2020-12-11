@@ -1,0 +1,8 @@
+{
+    "1": [
+        "1.sol,1_attacker.sol,vul",
+        "1.sol,1_attacker_benign.sol,vul",
+        "1_safe.sol,1_attacker.sol,safe",
+        "1_safe.sol,1_attacker_benign.sol,safe"
+    ]
+}

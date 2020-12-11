@@ -1,0 +1,15 @@
+{
+    "1": {
+        "main": [
+            {   
+                "Lottery": "",
+                "isMainContract": true
+            }
+        ],
+        "attackers": [
+            {
+                "GiveMeEverything": "Lottery"
+            }
+        ]
+    }
+}

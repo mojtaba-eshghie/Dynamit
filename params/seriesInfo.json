@@ -1,0 +1,36 @@
+{
+    "1": {
+        "1.sol": {
+            "contracts": {
+                "Lottery": {
+                    "argument": [],
+                    "address": ""
+                }
+            }
+        },
+        "1_safe.sol": {
+            "contracts": {
+                "Lottery": {
+                    "argument": [],
+                    "address": ""
+                }
+            }
+        },
+        "1_attacker.sol": {
+            "contracts": {
+                "GiveMeEverything": {
+                    "arguments": [""],
+                    "address": ""
+                }
+            }
+        },
+        "1_attacker_benign.sol": {
+            "contracts": {
+                "GiveMeEverything": {
+                    "arguments": [""],
+                    "address": ""
+                }
+            }
+        }
+    }
+}
