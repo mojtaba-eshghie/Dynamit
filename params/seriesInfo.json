@@ -4,7 +4,7 @@
             "contracts": {
                 "main": {
                     "name": "Lottery",
-                    "address": "0x1F0fA8c7F8fAF29f19AFDaDaE1cbcff797FC4602",
+                    "address": "0x498380569D836457FBaBf8c12AA2708521441E60",
                     "abi": [
                         {
                             "constant": false,
@@ -183,7 +183,7 @@
             "contracts": {
                 "main": {
                     "name": "Lottery",
-                    "address": "0xd683350516C6Fbd338044131d54636cC599D64d5",
+                    "address": "0xb94934E5B3E5964Aec4DaCd6091669eEfD211E1c",
                     "abi": [
                         {
                             "constant": false,
@@ -362,7 +362,7 @@
             "contracts": {
                 "main": {
                     "name": "GiveMeEverything",
-                    "address": "0x6E7b258d586B488140346181d45e0e9699aef890",
+                    "address": "0xA61351Ab230bedC86B1Ef7d7Df3029C6770109bF",
                     "abi": [
                         {
                             "constant": true,
@@ -419,7 +419,7 @@
             "contracts": {
                 "main": {
                     "name": "GiveMeEverything",
-                    "address": "0x93204105c64d926Fb6eea719cA7013A4f188e0f8",
+                    "address": "0xB60D61d350add68825d3d7cD65864f07fAa27f99",
                     "abi": [
                         {
                             "constant": true,
@@ -476,7 +476,7 @@
             "contracts": {
                 "main": {
                     "name": "GiveMeEverything",
-                    "address": "0x95661aF8EF69BE7774890245EBe0878ba366F43e",
+                    "address": "0x7108d54c4432748Ec7E0432b71b3Cbf8028ea518",
                     "abi": [
                         {
                             "constant": true,
@@ -533,7 +533,7 @@
             "contracts": {
                 "main": {
                     "name": "GiveMeEverything",
-                    "address": "0x4398120F6712Fc79a8685DCd91Dd161DD201FD72",
+                    "address": "0x92c94F520bdf5Ca0b320B8884ce199eC398D7e4d",
                     "abi": [
                         {
                             "constant": true,
@@ -586,5 +586,1042 @@
                 }
             }
         }
+    },
+
+
+    "2": {
+        "2.sol": {
+            "contracts": {
+                "main": {
+                    "name": "PIGGY_BANK",
+                    "address": "0x9d1D421f0aa6Ce62533553D2B68E92c3AdBC0294",
+                    "abi": [
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_am",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "Collect",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "MinSum",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "show_account",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "Accounts",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "to",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "Put",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [
+                                {
+                                    "name": "_log",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "2_safe.sol": {
+            "contracts": {
+                "main": {
+                    "name": "PIGGY_BANK",
+                    "address": "0x6b718Ef5cc7cc9c36aBf67170Bd1e9c76882d36F",
+                    "abi": [
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_am",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "Collect",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "MinSum",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "show_account",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "Accounts",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "to",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "Put",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [
+                                {
+                                    "name": "_log",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "2_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0xfc650A97F83C9767E108d162073983DB674429c0",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "2_safe_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x7E4038a10b8687EAc319a664cb73773Cd3aafDc2",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "2_attacker_benign.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x29403e141E485643086189D46461d2cC92ff34B8",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+
+
+    "3": {
+        "3.sol": {
+            "contracts": {
+                "main": {
+                    "name": "EtherStore",
+                    "address": "0x23D67de485895b80691bdCe107a2fE44e821c8D3",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "lastWithdrawTime",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_weiToWithdraw",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "withdrawFunds",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "balances",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "withdrawalLimit",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [],
+                            "name": "depositFunds",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        }
+                    ]
+                }
+            }
+        },
+        "3_safe.sol": {
+            "contracts": {
+                "main": {
+                    "name": "EtherStore",
+                    "address": "0xBD5f6e120eA872115D642e6e8B499AEBC1A75DF7",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "lastWithdrawTime",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_weiToWithdraw",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "withdrawFunds",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "balances",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "withdrawalLimit",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [],
+                            "name": "depositFunds",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        }
+                    ]
+                }
+            }
+        },
+        "3_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x17104D098CEf4121D01cFaF7c4cDd2efC79671f3",
+                    "abi": [
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "store",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "3_safe_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x13b909426e9dd7EE1C48C1a450B6c8208198c572",
+                    "abi": [
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "store",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+
+    
+    "4": {
+        "4.sol": {
+            "contracts": {
+                "main": {
+                    "name": "Private_Bank",
+                    "address": "0x112E7E14D853616b6265c8778da6eA14DD493673",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "MinDeposit",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "balances",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_am",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "CashOut",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [],
+                            "name": "Deposit",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [
+                                {
+                                    "name": "_log",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "4_safe.sol": {
+            "contracts": {
+                "main": {
+                    "name": "Private_Bank",
+                    "address": "0x3e14aF473CCa0da1687D634e35Ff9D1782DD9966",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "MinDeposit",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "balances",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "counter",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_am",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "name": "CashOut",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [],
+                            "name": "Deposit",
+                            "outputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [
+                                {
+                                    "name": "_log",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "4_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x194249a11D25820575964732D4Ac783DE8AE3D1b",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "4_safe_attacker.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0x612cCe50009b27C6AcbB09522F6c51e0ADc9D1A1",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        },
+        "4_attacker_benign.sol": {
+            "contracts": {
+                "main": {
+                    "name": "GiveMeEverything",
+                    "address": "0xCeCD54688c33Fb76BCE24C732AD0E4d1c59ff098",
+                    "abi": [
+                        {
+                            "constant": true,
+                            "inputs": [],
+                            "name": "bank",
+                            "outputs": [
+                                {
+                                    "name": "",
+                                    "type": "address"
+                                }
+                            ],
+                            "payable": false,
+                            "stateMutability": "view",
+                            "type": "function"
+                        },
+                        {
+                            "constant": false,
+                            "inputs": [
+                                {
+                                    "name": "_addr",
+                                    "type": "address"
+                                }
+                            ],
+                            "name": "startAttack",
+                            "outputs": [],
+                            "payable": false,
+                            "stateMutability": "nonpayable",
+                            "type": "function"
+                        },
+                        {
+                            "inputs": [],
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "constructor"
+                        },
+                        {
+                            "payable": true,
+                            "stateMutability": "payable",
+                            "type": "fallback"
+                        }
+                    ]
+                }
+            }
+        }
     }
+
+
+
 }

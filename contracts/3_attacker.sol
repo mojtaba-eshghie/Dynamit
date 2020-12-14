@@ -1,6 +1,8 @@
 pragma solidity ^0.4.19;
 
-import "5.sol";
+import "3.sol";
+
+// Please send a few ethers to me before deploying me!
 
 contract GiveMeEverything {
     EtherStore public store;

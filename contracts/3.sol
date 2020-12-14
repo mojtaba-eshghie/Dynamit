@@ -5,6 +5,10 @@ contract EtherStore {
     mapping(address => uint256) public lastWithdrawTime;
     mapping(address => uint256) public balances;
     uint public counter;
+
+    function EtherStore() public payable {
+        
+    }
     
     function depositFunds() public payable {
         balances[msg.sender] += msg.value;
