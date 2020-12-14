@@ -25,6 +25,7 @@ const csvWriter = createCsvWriter({
       {id: 'timestamp', title: 'timestamp'},
       {id: 'tx_index', title: 'tx_index'},
       {id: 'tx_hash', title: 'tx_hash'},
+      {id: 'fuzz_string', title: 'fuzz_string'},
     ]
 });
 let data = []
@@ -72,38 +73,41 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
             
             return accounts
         }).then((accounts) => {
-
-            
-            let randAcountIndex = Math.floor(Math.random() * 5)
-            let randGasPrice = '12345' + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString()
-            console.log('rand act index:')
-            console.log(randAcountIndex)
-            console.log('rand gas price:')
-            console.log(randGasPrice)
-
-
-            web3.eth.personal.unlockAccount(accounts[randAcountIndex], "123", 10000).then(() => {
+        
+        
+        
+        let randAcountIndex = Math.floor(Math.random() * 5)
+        let randGasPrice = '12345' + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString()
+        console.log('rand act index:')
+        console.log(randAcountIndex)
+        console.log('rand gas price:')
+        console.log(randGasPrice)
 
 
-                subscriptionHolder[fuzzString] = web3.eth.subscribe('pendingTransactions', function(error, result){  
-                    
-                })
-                .on("connected", function(res){
-                    /*
-                    console.log("=>>>>>>>>>>>>>>>>>>>>>>>>> connected:")
-                    console.log(res);
-                    console.log("=====================================")
-                    */
-                })
-                .on("data", (res) => {
-                    console.log(">>>>> data: ")
-                    console.log(res);
-                    console.log("=====================================\n")
-                    
-                    web3.eth.getTransaction(res).then(tx => {
-                        console.log(tx)
+
+
+        subscriptionHolder[fuzzString] = web3.eth.subscribe('pendingTransactions', function(error, result){  
+                
+            })
+            .on("connected", function(res){
+                /*
+                console.log("=>>>>>>>>>>>>>>>>>>>>>>>>> connected:")
+                console.log(res);
+                console.log("=====================================")
+                */
+            })
+            .on("data", (res) => {
+                console.log(">>>>> data: ")
+                console.log(res);
+                console.log("=====================================\n")
+                
+                web3.eth.getTransaction(res).then(tx => {
+                    console.log(tx)
 
                     if (tx.from == accounts[randAcountIndex] && tx.to == contractTwoAddress && tx.gasPrice == randGasPrice) {
+                        
+                            
+                                
                         data.push({
                             "from": tx.from,
                             "to": tx.to,
@@ -113,7 +117,8 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                             "input": tx.input,
                             "timestamp": Date.now(),
                             "tx_index": tx.transactionIndex,
-                            "tx_hash": tx.hash
+                            "tx_hash": tx.hash,
+                            "fuzz_string": fuzzString
                         })
 
                         subscriptionHolder[fuzzString].unsubscribe((error) => {
@@ -125,36 +130,40 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                                 .then(() => {
                                     console.log("just wrote a piece of data to file")
                                 });
+                        
+
+
+                        
 
                     } else {
                         console.log("\ntx is not what we want...: ")
                         console.log(tx)
                         console.log("tx.from: " + tx.from + "\ntx.to: " + tx.to + "\nwe want from: " + contractTwoAddress + "\nto: " + contractOneAddress)
                     }
-                    })
-                    
-
-
-
                 })
                 
 
-                
-                let newAttakcerInstance = new web3.eth.Contract(abi, contractTwoAddress, {
-                    gasPrice: randGasPrice, from: accounts[randAcountIndex]
-                })
-                
-                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
-                
-
-
-                console.log(contractOneAddress)
-                console.log(contractTwoAddress)
-                console.log("--------------\n\n")
 
 
             })
+            
+
+            let newAttakcerInstance = new web3.eth.Contract(abi, contractTwoAddress, {
+                gasPrice: randGasPrice, from: accounts[randAcountIndex]
+            })
+            
+            newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+
         
+
+
+
+
+            console.log(contractOneAddress)
+            console.log(contractTwoAddress)
+            console.log("--------------\n\n")
+
+
             
 
             

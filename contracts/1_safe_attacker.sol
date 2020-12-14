@@ -1,11 +1,10 @@
 pragma solidity ^0.4.26;
-import '1.sol';
+import '1_safe.sol';
 /*
 let's say that the attacker is someone who holds an account participating in lottery right now
 */
 
 contract GiveMeEverything{
-    
     
     Lottery public dao;
     address public player;

@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
     "glob": "^7.1.6",
     "solc": "^0.4.26",
     "web3": "^1.3.0"

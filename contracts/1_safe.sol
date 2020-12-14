@@ -15,7 +15,7 @@ contract Lottery {
     uint public elected_winner;
     address public elected_winner_address;
     
-    function Lottery() public {
+    function Lottery() public payable {
         manager = msg.sender;
     }
     
