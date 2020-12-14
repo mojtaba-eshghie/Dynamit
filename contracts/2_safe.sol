@@ -7,7 +7,7 @@ contract PIGGY_BANK
     uint public MinSum = 1 ether;
     Log LogFile;
     uint putBlock;
-    function PIGGY_BANK(address _log) public
+    function PIGGY_BANK(address _log) public payable
     {
         counter = 0;
         LogFile = Log(_log);
@@ -21,8 +21,8 @@ contract PIGGY_BANK
     function Collect(uint _am) public payable {
         counter = counter + 1;
         if(_am<=Accounts[msg.sender]) {
+            Accounts[msg.sender]-=_am;
             if(msg.sender.call.value(_am)()) {
-                Accounts[msg.sender]-=_am;
                 LogFile.AddMessage(msg.sender,_am,"Collect");
             }
         }
