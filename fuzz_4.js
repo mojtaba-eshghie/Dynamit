@@ -7,7 +7,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-const numberOfContractsSeries = 1
+const numberOfContractsSeries = 4
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let subscriptionHolder = Object()
@@ -119,13 +119,6 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                             console.log("Unsubscribing from " + fuzzString + ", Error is " + error)
                         })
 
-                        csvWriter
-                            .writeRecords(data)
-                                .then(() => {
-                                    console.log("just wrote a piece of data to file")
-                                });
-                        
-
 
                         
 
@@ -146,9 +139,15 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 gasPrice: randGasPrice, from: accounts[randAcountIndex]
             })
             
-            newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+            setTimeout(() => {
 
+                console.log("\n*********************************************\n*********************************************\n*********************************************\n")
+                console.log("doing: " + fuzzString)
+                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
         
+            }, Math.floor(Math.random() * 40000))
+
+
 
 
 
@@ -170,4 +169,19 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
 
 })
 
+
+
+setTimeout(() => {
+
+    console.log("Writing to file")
+
+    csvWriter
+    .writeRecords(data)
+        .then(() => {
+            console.log("just wrote a piece of data to file")
+        });
+
+
+    
+}, Math.floor(Math.random() * 250000))
 
