@@ -12,6 +12,7 @@ const numberOfContractsSeries = 4
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let subscriptionHolder = Object()
+let txTimeCounter = 0
 
 
 const csvWriter = createCsvWriter({
@@ -146,7 +147,9 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 console.log("doing: " + fuzzString)
                 newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
                 
-            }, Math.floor(Math.random() * 400000))
+            }, txTimeCounter)
+            txTimeCounter = txTimeCounter + 35000
+            //Math.floor(Math.random() * 400000)
 
 
 
