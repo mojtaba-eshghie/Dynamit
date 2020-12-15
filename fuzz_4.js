@@ -11,7 +11,7 @@ const numberOfContractsSeries = 4
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let subscriptionHolder = Object()
-let timeCounter = 0
+
 
 const csvWriter = createCsvWriter({
     path: 'data/out.csv',
@@ -140,14 +140,12 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
             })
             
             setTimeout(() => {
-                
+
                 console.log("\n*********************************************\n*********************************************\n*********************************************\n")
                 console.log("doing: " + fuzzString)
                 newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
-                console.log("\n*********************************************\n*********************************************\n*********************************************\n")
-                
-            }, timeCounter)
-            timeCounter = timeCounter + 60000
+        
+            }, Math.floor(Math.random() * 40000))
 
 
 
@@ -171,7 +169,11 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
 
 })
 
-
+let timeCounter;
+setInterval(() => {
+    timeCounter++;
+    console.log("Elapsed time: " + timeCounter.toString())
+}, 1000)
 
 setTimeout(() => {
 
@@ -180,10 +182,12 @@ setTimeout(() => {
     csvWriter
     .writeRecords(data)
         .then(() => {
-            console.log("just wrote a piece of data to file")
+            console.log("\n====================================================\n====================================================\n====================================================\n")
+            console.log("just wrote collected data to file")
+            console.log("\n====================================================\n====================================================\n====================================================\n")
         });
 
 
     
-}, Math.floor(Math.random() * 250000))
+}, Math.floor(Math.random() * 500000))
 
