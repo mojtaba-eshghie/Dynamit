@@ -202,10 +202,6 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                             console.log("\n*********************************************\n*********************************************\n*********************************************\n")
                             console.log("doing: " + fuzzString)
                             newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
-                            
-
-                            // let's put these into somewhere
-
 
                             // let's set these for the next iteration
                             prev_attacker_addr = contractTwoAddress
@@ -288,7 +284,13 @@ setTimeout(() => {
                             
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             after_of_prev_tx_obj = bal_obj
-                            txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            if (txBalanceInfo[current_tx_hash]) {
+                                txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            } else {
+                                txBalanceInfo[current_tx_hash] = Object()
+                                txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            }
+                            
                         })
                         .then(() => {
                             // Let's write out the file:
@@ -334,7 +336,12 @@ setTimeout(() => {
                                 console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                                 after_of_prev_tx_obj = bal_obj
                                 
-                                txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                                if (txBalanceInfo[current_tx_hash]) {
+                                    txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                                } else {
+                                    txBalanceInfo[current_tx_hash] = Object()
+                                    txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                                }
                             })
                             .then(() => {
                                 // Let's write out the file:
@@ -359,5 +366,5 @@ setTimeout(() => {
 
 
     
-}, 800000)
+}, 900000)
 
