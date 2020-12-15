@@ -169,7 +169,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
 
 })
 
-let timeCounter;
+let timeCounter = 0;
 setInterval(() => {
     timeCounter++;
     console.log("Elapsed time: " + timeCounter.toString())
