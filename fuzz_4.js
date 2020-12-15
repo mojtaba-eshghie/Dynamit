@@ -7,7 +7,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-const numberOfContractsSeries = 4
+const numberOfContractsSeries = 1
 
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
@@ -51,7 +51,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
     let serieIndex = i + 1
     let serieStringIndex = serieIndex.toString()
 
-    
+    console.log(runFuzzer)
 
     return await runFuzzer[serieStringIndex].forEach(async (fuzzString) => {
         
@@ -185,6 +185,9 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                     console.log("doing: " + fuzzString)
                     newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
                     
+                    prev_attacker_addr = contractTwoAddress
+                    prev_victim_addr = contractOneAddress
+                    prev_tx_hash = current_tx_hash
                 }
                 
             }, txTimeCounter)
