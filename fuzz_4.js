@@ -8,6 +8,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
 const numberOfContractsSeries = 4
+
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let subscriptionHolder = Object()
@@ -144,7 +145,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 console.log("\n*********************************************\n*********************************************\n*********************************************\n")
                 console.log("doing: " + fuzzString)
                 newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
-        
+                
             }, Math.floor(Math.random() * 400000))
 
 
@@ -177,17 +178,34 @@ setInterval(() => {
 
 setTimeout(() => {
 
-    console.log("Writing to file")
+        
+    web3.eth.getPendingTransactions().then((pendingTXs) => {
+        if (pendingTXs.length == 0){
+            // no pending tx, assuming that everything is over
+            csvWriter
+                .writeRecords(data)
+                    .then(() => {
+                        console.log("\n====================================================\n====================================================\n====================================================\n")
+                        console.log("just wrote collected data to file")
+                        console.log("\n====================================================\n====================================================\n====================================================\n")
+                    });
+        } else {
+            // We're in trouble, and there are more tx's. Let's wait a bit more
+            setTimeout(() => {
+                csvWriter
+                    .writeRecords(data)
+                        .then(() => {
+                            console.log("\n====================================================\n====================================================\n====================================================\n")
+                            console.log("just wrote collected data to file")
+                            console.log("\n====================================================\n====================================================\n====================================================\n")
+                        });
+            }, 15000*pendingTXs.length)
+        }
+    })
 
-    csvWriter
-    .writeRecords(data)
-        .then(() => {
-            console.log("\n====================================================\n====================================================\n====================================================\n")
-            console.log("just wrote collected data to file")
-            console.log("\n====================================================\n====================================================\n====================================================\n")
-        });
+    
 
 
     
-}, Math.floor(Math.random() * 700000))
+}, 700000)
 
