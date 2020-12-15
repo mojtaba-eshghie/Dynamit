@@ -164,6 +164,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                         })
                         .then((bal_obj) => {
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                        
                             console.log(bal_obj)
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             after_of_prev_tx_obj = bal_obj
@@ -267,6 +268,37 @@ setTimeout(() => {
                         console.log("\n====================================================\n====================================================\n====================================================\n")
                         console.log("just wrote collected data to file")
                         console.log(txBalanceInfo)
+
+
+                        // Let's do the following (as the after_tx is not recorded for the last tx)
+                        web3.eth.getBalance(prev_victim_addr)
+                        .then(async (victim_bal) => {
+                            return {
+                                attacker_bal: await web3.eth.getBalance(prev_attacker_addr),
+                                victim_bal: victim_bal
+                            }
+                        })
+                        .then((bal_obj) => {
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                        
+                            console.log(bal_obj)
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            after_of_prev_tx_obj = bal_obj
+                            txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                        })
+                        .then(() => {
+                            // Let's write out the file:
+                            const writableTXData = JSON.stringify(txBalanceInfo)
+                            fs.writeFileSync('data/txBalanceInfo.json', writableTXData, (err) => {
+                                if (err) {
+                                    console.log("Something bad happened:")
+                                    console.log(err)
+                                } else {
+                                    console.log("JSON data saved successfully to txBalanceInfo.json file.")
+                                }
+                            })
+                        })
+
                         console.log("\n====================================================\n====================================================\n====================================================\n")
                     });
         } else {
@@ -278,6 +310,38 @@ setTimeout(() => {
                             console.log("\n====================================================\n====================================================\n====================================================\n")
                             console.log("just wrote collected data to file")
                             console.log(txBalanceInfo)
+
+
+                                
+                                // Let's do the following (as the after_tx is not recorded for the last tx)
+                            web3.eth.getBalance(prev_victim_addr)
+                            .then(async (victim_bal) => {
+                                return {
+                                    attacker_bal: await web3.eth.getBalance(prev_attacker_addr),
+                                    victim_bal: victim_bal
+                                }
+                            })
+                            .then((bal_obj) => {
+                                console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            
+                                console.log(bal_obj)
+                                console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                                after_of_prev_tx_obj = bal_obj
+                                txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            })
+                            .then(() => {
+                                // Let's write out the file:
+                                const writableTXData = JSON.stringify(txBalanceInfo)
+                                fs.writeFileSync('data/txBalanceInfo.json', writableTXData, (err) => {
+                                    if (err) {
+                                        console.log("Something bad happened:")
+                                        console.log(err)
+                                    } else {
+                                        console.log("JSON data saved successfully to txBalanceInfo.json file.")
+                                    }
+                                })
+                            })
+
                             console.log("\n====================================================\n====================================================\n====================================================\n")
                         });
             }, 15000*pendingTXs.length)
