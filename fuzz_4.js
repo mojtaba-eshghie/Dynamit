@@ -145,7 +145,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 console.log("doing: " + fuzzString)
                 newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
         
-            }, Math.floor(Math.random() * 40000))
+            }, Math.floor(Math.random() * 400000))
 
 
 
@@ -189,5 +189,5 @@ setTimeout(() => {
 
 
     
-}, Math.floor(Math.random() * 500000))
+}, Math.floor(Math.random() * 700000))
 
