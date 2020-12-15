@@ -41,6 +41,12 @@ subscription.unsubscribe(function(error, success){
 */
 
 
+let prev_victim_addr = null
+let prev_attacker_addr = null
+let prev_tx_hash = null
+let current_tx_hash = null
+
+
 Array(numberOfContractsSeries).fill().map(async (_, i) => {
     let serieIndex = i + 1
     let serieStringIndex = serieIndex.toString()
@@ -122,7 +128,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                         })
 
 
-                        
+                        current_tx_hash = tx.hash
 
                     } else {
                         console.log("\ntx is not what we want...: ")
@@ -143,12 +149,46 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
             
             setTimeout(() => {
 
-                console.log("\n*********************************************\n*********************************************\n*********************************************\n")
-                console.log("doing: " + fuzzString)
-                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+                // first let's get the balance of previous pair of contracts before we issue any other tx
+                
+                if (prev_attacker_addr != null) {
+
+                    web3.eth.getBalance(prev_victim_addr)
+                        .then(async (victim_bal) => {
+                            return {
+                                attacker_bal: await web3.eth.getBalance(prev_attacker_addr),
+                                victim_bal: victim_bal
+                            }
+                        })
+                        .then((bal_obj) => {
+                            console.log(bal_obj)
+                        })
+                        .then(() => {
+                            // now let's execute this transaction
+                            console.log("\n*********************************************\n*********************************************\n*********************************************\n")
+                            console.log("doing: " + fuzzString)
+                            newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+                            
+
+                            // let's put these into somewhere
+
+
+                            // let's set these for the next iteration
+                            prev_attacker_addr = contractTwoAddress
+                            prev_victim_addr = contractOneAddress
+                            prev_tx_hash = current_tx_hash
+                            
+                        })
+                } else {
+                    // now let's execute this transaction
+                    console.log("\n*********************************************\n*********************************************\n*********************************************\n")
+                    console.log("doing: " + fuzzString)
+                    newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+                    
+                }
                 
             }, txTimeCounter)
-            txTimeCounter = txTimeCounter + 35000
+            txTimeCounter = txTimeCounter + 60000
             //Math.floor(Math.random() * 400000)
 
 

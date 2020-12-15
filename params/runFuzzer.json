@@ -2,21 +2,6 @@
     "1": [
         "1.sol,1_attacker_benign.sol,vul",
         "1_safe.sol,1_safe_attacker.sol,safe",
-        "1_safe.sol,1_safe_attacker_benign.sol,safe",
         "1.sol,1_attacker.sol,vul"
-    ],
-    "2": [
-        "2.sol,2_attacker.sol,vul",
-        "2.sol,2_attacker_benign.sol,safe",
-        "2_safe.sol,2_safe_attacker.sol,safe"
-    ],
-    "3": [
-        "3_safe.sol,3_safe_attacker.sol,safe",
-        "3.sol,3_attacker.sol,vul"
-    ],
-    "4": [
-        "4.sol,4_attacker.sol,vul",
-        "4_safe.sol,4_safe_attacker.sol,safe",
-        "4.sol,4_attacker_benign.sol,safe"
     ]
 }
