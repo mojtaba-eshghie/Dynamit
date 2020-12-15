@@ -107,7 +107,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 console.log("=====================================\n")
                 
                 web3.eth.getTransaction(res).then(tx => {
-                    console.log(tx)
+                    //console.log(tx)
 
                     if (tx.from == accounts[randAcountIndex] && tx.to == contractTwoAddress && tx.gasPrice == randGasPrice) {
                         
