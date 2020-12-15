@@ -7,7 +7,7 @@ const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-const numberOfContractsSeries = 1
+const numberOfContractsSeries = 4
 
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
@@ -102,9 +102,9 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                 */
             })
             .on("data", (res) => {
-                console.log(">>>>> data: ")
-                console.log(res);
-                console.log("=====================================\n")
+                //console.log(">>>>> data: ")
+                //console.log(res);
+                //console.log("=====================================\n")
                 
                 web3.eth.getTransaction(res).then(tx => {
                     //console.log(tx)
@@ -132,7 +132,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
 
                     } else {
                         console.log("\ntx is not what we want...: ")
-                        console.log(tx)
+                        //console.log(tx)
                         console.log("tx.from: " + tx.from + "\ntx.to: " + tx.to + "\nwe want from: " + contractTwoAddress + "\nto: " + contractOneAddress)
                     }
                 })
@@ -161,7 +161,10 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                             }
                         })
                         .then((bal_obj) => {
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             console.log(bal_obj)
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            
                         })
                         .then(() => {
                             // now let's execute this transaction
