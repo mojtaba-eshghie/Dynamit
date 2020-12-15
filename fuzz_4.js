@@ -282,6 +282,10 @@ setTimeout(() => {
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                         
                             console.log(bal_obj)
+
+                            console.log("and current tx hash is:")
+                            console.log(current_tx_hash)
+                            
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             after_of_prev_tx_obj = bal_obj
                             txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
@@ -325,8 +329,11 @@ setTimeout(() => {
                                 console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             
                                 console.log(bal_obj)
+                                console.log("and current tx hash is:")
+                                console.log(current_tx_hash)
                                 console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                                 after_of_prev_tx_obj = bal_obj
+                                
                                 txBalanceInfo[current_tx_hash]['after_tx'] = after_of_prev_tx_obj
                             })
                             .then(() => {
