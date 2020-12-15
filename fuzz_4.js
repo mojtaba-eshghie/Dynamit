@@ -45,7 +45,9 @@ let prev_victim_addr = null
 let prev_attacker_addr = null
 let prev_tx_hash = null
 let current_tx_hash = null
-
+let after_of_prev_tx_obj = null
+let before_of_curr_tx_obj = null
+let txBalanceInfo = Object()
 
 Array(numberOfContractsSeries).fill().map(async (_, i) => {
     let serieIndex = i + 1
@@ -164,7 +166,35 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
                             console.log(bal_obj)
                             console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            after_of_prev_tx_obj = bal_obj
+                        })
+                        .then(async () => {
+                            return await web3.eth.getBalance(contractTwoAddress)
+                        })
+                        .then(async (attacker_bal) => {
+                            return {
+                                attacker_bal: attacker_bal,
+                                victim_bal: await web3.eth.getBalance(contractOneAddress)
+                            }
+                        })
+                        .then((bal_obj) => {
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            console.log(bal_obj)
+                            console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                            before_of_curr_tx_obj = bal_obj
                             
+                            if (txBalanceInfo[current_tx_hash]) {
+                                txBalanceInfo[current_tx_hash]['before_tx'] = before_of_curr_tx_obj
+                            } else {
+                                txBalanceInfo[current_tx_hash] = Object()
+                                txBalanceInfo[current_tx_hash]['before_tx'] = before_of_curr_tx_obj
+                            }
+                            if (txBalanceInfo[prev_tx_hash]) {
+                                txBalanceInfo[prev_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            } else {
+                                txBalanceInfo[prev_tx_hash] = Object()
+                                txBalanceInfo[prev_tx_hash]['after_tx'] = after_of_prev_tx_obj
+                            }
                         })
                         .then(() => {
                             // now let's execute this transaction
@@ -184,7 +214,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
                         })
                 } else {
                     // now let's execute this transaction
-                    console.log("\n*********************************************\n*********************************************\n*********************************************\n")
+                    console.log("\n*******************-----*********************\n*********************************************\n*********************************************\n")
                     console.log("doing: " + fuzzString)
                     newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
                     
@@ -236,6 +266,7 @@ setTimeout(() => {
                     .then(() => {
                         console.log("\n====================================================\n====================================================\n====================================================\n")
                         console.log("just wrote collected data to file")
+                        console.log(txBalanceInfo)
                         console.log("\n====================================================\n====================================================\n====================================================\n")
                     });
         } else {
@@ -246,6 +277,7 @@ setTimeout(() => {
                         .then(() => {
                             console.log("\n====================================================\n====================================================\n====================================================\n")
                             console.log("just wrote collected data to file")
+                            console.log(txBalanceInfo)
                             console.log("\n====================================================\n====================================================\n====================================================\n")
                         });
             }, 15000*pendingTXs.length)
@@ -256,5 +288,5 @@ setTimeout(() => {
 
 
     
-}, 700000)
+}, 800000)
 
