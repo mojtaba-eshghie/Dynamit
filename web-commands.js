@@ -1,6 +1,0 @@
-web3.personal.unlockAccount(web3.eth.accounts[0], "123", 1000000000)
-web3.personal.unlockAccount(web3.eth.accounts[1], "123", 1000000000)
-web3.personal.unlockAccount(web3.eth.accounts[2], "123", 1000000000)
-web3.personal.unlockAccount(web3.eth.accounts[3], "123", 1000000000)
-web3.personal.unlockAccount(web3.eth.accounts[4], "123", 1000000000)
-web3.personal.unlockAccount(web3.eth.accounts[5], "123", 1000000000)
