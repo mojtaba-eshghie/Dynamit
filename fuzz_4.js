@@ -152,7 +152,7 @@ Array(numberOfContractsSeries).fill().map(async (_, i) => {
             setTimeout(() => {
 
                 // first let's get the balance of previous pair of contracts before we issue any other tx
-                
+                console.log("Entering for :::: " + fuzzString)
                 if (prev_attacker_addr != null) {
 
                     web3.eth.getBalance(prev_victim_addr)
@@ -366,5 +366,5 @@ setTimeout(() => {
 
 
     
-}, 900000)
+}, 800000)
 
