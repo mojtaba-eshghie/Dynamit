@@ -1,1 +1,2 @@
-# sc-monitor
+# Smart Contract Monitor
+
