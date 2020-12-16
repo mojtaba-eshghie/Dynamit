@@ -1,2 +1,3 @@
-# Smart Contract Monitor
+# Ethereum Smart Contracts RTM
+
 
