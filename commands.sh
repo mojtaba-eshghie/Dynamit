@@ -1,0 +1,1 @@
+curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["0x6560a204480dd3fef55ead35e8623093de8d32c46560a2dbafbd949e4cf0a541", {}], "id":1}' > trace.json

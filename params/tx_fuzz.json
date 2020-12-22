@@ -1,0 +1,487 @@
+{
+    "1": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "2": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "3": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "4": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "5": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "6": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "7": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "8": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "9": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "10": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "11": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "12": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "13": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "14": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "15": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "16": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "17": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "18": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "19": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "20": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "21": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "22": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "23": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "24": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "25": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "26": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "27": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "28": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "29": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "30": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "31": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "32": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "33": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "34": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "35": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "36": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "37": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "38": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "39": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "40": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "41": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "42": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "43": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    },
+    "44": {
+        "attacker": {
+            "address": "",
+            "abi": ""
+        }, 
+        "victim": {
+            "contract_name": "",
+            "function_name": "",
+            "address": ""
+        }
+    }
+}
+
