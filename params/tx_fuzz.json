@@ -1,5 +1,6 @@
 {
     "1": {
+        "files": "1.sol,1_attacker.sol",
         "attacker": {
             "address": "0xa4d0680F0dFfD18f857939197414759B47133155",
             "abi": [
@@ -59,6 +60,7 @@
         "label": "vul"
     },
     "2": {
+        "files": "1_safe.sol,1_safe_attacker.sol",
         "attacker": {
             "address": "0x840f17E8BFA2B5e41DC9fFc4575AB78BdD7A933b",
             "abi": [
@@ -118,6 +120,7 @@
         "label": "safe"
     },
     "3": {
+        "files": "1.sol,1_benign_attacker.sol",
         "attacker": {
             "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
             "abi": [
@@ -173,7 +176,8 @@
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        }
+        },
+        "label": "safe"
     }
 }
 

@@ -62,10 +62,12 @@ Array(numOfTXs).fill().map(async (_, i) => {
         //TODO: change the following to something universal
         //let contractOneAddress = contractOneSerieInfo["contracts"]["main"]["address"]
         //let contractTwoAddress = contractTwoSerieInfo["contracts"]["main"]["address"]
-        let contractOneAddress = tx_fuzz["victim"]["address"]
-        let contractTwoAddress = tx_fuzz["attacker"]["address"]
+        let contractOneAddress = tx_fuzz[serieStringIndex]["victim"]["address"]
+        let contractTwoAddress = tx_fuzz[serieStringIndex]["attacker"]["address"]
 
-        let abi = tx_fuzz["attacker"]["abi"]
+        let abi = tx_fuzz[serieStringIndex]["attacker"]["abi"]
+
+        let fuzzString = tx_fuzz[serieStringIndex]["files"] + "_" + serieStringIndex
         
         
         web3.eth.getAccounts((error,accounts) => {
