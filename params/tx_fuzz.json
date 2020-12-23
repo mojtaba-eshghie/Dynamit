@@ -1,488 +1,178 @@
 {
     "1": {
         "attacker": {
-            "address": "",
-            "abi": ""
+            "address": "0xa4d0680F0dFfD18f857939197414759B47133155",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "dao",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "player",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_dao",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
         }, 
         "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
+            "contract_name": "Lottery",
+            "address": "0x9B689638F61EA6F9f05287887D9534FA57d5D02c"
         },
-        "tx_files": "",
-        "label": "safe"
+        "label": "vul"
     },
     "2": {
         "attacker": {
-            "address": "",
-            "abi": ""
+            "address": "0x840f17E8BFA2B5e41DC9fFc4575AB78BdD7A933b",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "dao",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "player",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_dao",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
         }, 
         "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
+            "contract_name": "Lottery",
+            "address": "0x145180440918693c67F2eC038Fdc894a2892cc4b"
+        },
+        "label": "safe"
     },
     "3": {
         "attacker": {
-            "address": "",
-            "abi": ""
+            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "dao",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "player",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_dao",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
         }, 
         "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "4": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "5": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "6": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "7": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "8": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "9": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "10": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "11": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "12": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "13": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "14": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "15": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "16": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "17": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "18": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "19": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "20": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "21": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "22": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "23": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "24": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "25": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "26": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "27": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "28": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "29": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "30": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "31": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "32": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "33": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "34": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "35": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "36": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "37": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "38": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "39": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "40": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "41": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "42": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "43": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
-        }
-    },
-    "44": {
-        "attacker": {
-            "address": "",
-            "abi": ""
-        }, 
-        "victim": {
-            "contract_name": "",
-            "function_name": "",
-            "address": ""
+            "contract_name": "Lottery",
+            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
         }
     }
 }
