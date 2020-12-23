@@ -3,6 +3,7 @@ const Web3 = require('web3')
 const glob = require("glob")
 const fs = require('fs')
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+let { exec } = require("child_process");
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
@@ -210,14 +211,28 @@ Array(numOfTXs).fill().map(async (_, i) => {
                     console.log("doing: " + fuzzString)
                     newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
                     
+
+                    // let's use prev_tx_hash here to get the debug_traceTransaction:
+                    cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${serieStringIndex}.json`
+                    exec(cmd, (error, stdout, stderr) => {
+                        if (error) {
+                            console.log(`error: ${error.message}`);
+                            return;
+                        }
+                        if (stderr) {
+                            console.log(`stderr: ${stderr}`);
+                            return;
+                        }
+                        console.log(`stdout: ${stdout}`);
+                    });
+
                     prev_attacker_addr = contractTwoAddress
                     prev_victim_addr = contractOneAddress
                     prev_tx_hash = current_tx_hash
                 }
                 
             }, txTimeCounter)
-            txTimeCounter = txTimeCounter + 60000
-            //Math.floor(Math.random() * 400000)
+            txTimeCounter = txTimeCounter + 80000
 
 
 
@@ -353,7 +368,7 @@ setTimeout(() => {
 
                             console.log("\n====================================================\n====================================================\n====================================================\n")
                         });
-            }, 15000*pendingTXs.length)
+            }, 25000*pendingTXs.length)
         }
     })
 
@@ -361,5 +376,5 @@ setTimeout(() => {
 
 
     
-}, 800000)
+}, 300000)
 
