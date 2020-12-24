@@ -15,7 +15,7 @@ let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let tx_fuzz = JSON.parse(fs.readFileSync("params/tx_fuzz.json"))
 
 let subscriptionHolder = Object()
-let txTimeCounter = 120
+let txTimeCounter = 120000
 
 
 const csvWriter = createCsvWriter({
@@ -102,9 +102,9 @@ Array(numOfTXs).fill().map(async (_, i) => {
                 */
             })
             .on("data", (res) => {
-                //console.log(">>>>> data: ")
-                //console.log(res);
-                //console.log("=====================================\n")
+                console.log(">>>>> data: ")
+                console.log(res);
+                console.log("=====================================\n")
                 
                 web3.eth.getTransaction(res).then(tx => {
                     //console.log(tx)
