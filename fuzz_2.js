@@ -15,7 +15,7 @@ let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let tx_fuzz = JSON.parse(fs.readFileSync("params/tx_fuzz.json"))
 
 let subscriptionHolder = Object()
-let txTimeCounter = 120000
+let txTimeCounter = 0
 
 
 const csvWriter = createCsvWriter({
@@ -151,7 +151,7 @@ Array(numOfTXs).fill().map(async (_, i) => {
 
                 // first let's get the balance of previous pair of contracts before we issue any other tx
                 console.log("Entering for :::: " + fuzzString)
-                if (prev_attacker_addr != null) {
+                if (prev_tx_hash != null) {
 
                     web3.eth.getBalance(prev_victim_addr)
                         .then(async (victim_bal) => {
@@ -201,6 +201,21 @@ Array(numOfTXs).fill().map(async (_, i) => {
                             console.log("doing: " + fuzzString)
                             newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
 
+                            // let's use prev_tx_hash here to get the debug_traceTransaction:
+                            cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${serieStringIndex}.json`
+                            exec(cmd, (error, stdout, stderr) => {
+                                if (error) {
+                                    console.log(`error: ${error.message}`);
+                                    return;
+                                }
+                                if (stderr) {
+                                    console.log(`stderr: ${stderr}`);
+                                    return;
+                                }
+                                console.log(`stdout: ${stdout}`);
+                            });
+
+
                             // let's set these for the next iteration
                             prev_attacker_addr = contractTwoAddress
                             prev_victim_addr = contractOneAddress
@@ -208,25 +223,14 @@ Array(numOfTXs).fill().map(async (_, i) => {
                             
                         })
                 } else {
+                    console.log("this is the first transaction?!")
                     // now let's execute this transaction
                     console.log("\n*******************-----*********************\n*********************************************\n*********************************************\n")
                     console.log("doing: " + fuzzString)
                     newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
                     
 
-                    // let's use prev_tx_hash here to get the debug_traceTransaction:
-                    cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${serieStringIndex}.json`
-                    exec(cmd, (error, stdout, stderr) => {
-                        if (error) {
-                            console.log(`error: ${error.message}`);
-                            return;
-                        }
-                        if (stderr) {
-                            console.log(`stderr: ${stderr}`);
-                            return;
-                        }
-                        console.log(`stdout: ${stdout}`);
-                    });
+                   
 
                     prev_attacker_addr = contractTwoAddress
                     prev_victim_addr = contractOneAddress
