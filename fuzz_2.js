@@ -15,7 +15,7 @@ let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 let tx_fuzz = JSON.parse(fs.readFileSync("params/tx_fuzz.json"))
 
 let subscriptionHolder = Object()
-let txTimeCounter = 0
+let txTimeCounter = 120
 
 
 const csvWriter = createCsvWriter({
