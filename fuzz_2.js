@@ -7,7 +7,7 @@ let { exec } = require("child_process");
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-const numOfTXs = 3
+const numOfTXs = 2
 
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
