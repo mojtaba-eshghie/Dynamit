@@ -234,7 +234,7 @@ Array(numOfTXs).fill().map(async (_, i) => {
                 }
                 
             }, txTimeCounter)
-            txTimeCounter = txTimeCounter + 80000
+            txTimeCounter = txTimeCounter + 120000
 
 
 
@@ -378,5 +378,5 @@ setTimeout(() => {
 
 
     
-}, 300000)
+}, 400000)
 
