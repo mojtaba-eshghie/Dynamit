@@ -41,9 +41,7 @@ let after_of_prev_tx_obj = null
 let before_of_curr_tx_obj = null
 let txBalanceInfo = Object()
 
-Array(numOfTXs).fill().map(async (_, i) => {
-    let serieIndex = i + 1
-    let serieStringIndex = serieIndex.toString()
+
 
     
     Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
@@ -62,6 +60,10 @@ Array(numOfTXs).fill().map(async (_, i) => {
         //TODO: change the following to something universal
         //let contractOneAddress = contractOneSerieInfo["contracts"]["main"]["address"]
         //let contractTwoAddress = contractTwoSerieInfo["contracts"]["main"]["address"]
+        
+        let serieIndex = key + 1
+        let serieStringIndex = serieIndex.toString()
+        
         let contractOneAddress = tx_fuzz[serieStringIndex]["victim"]["address"]
         let contractTwoAddress = tx_fuzz[serieStringIndex]["attacker"]["address"]
 
@@ -260,7 +262,6 @@ Array(numOfTXs).fill().map(async (_, i) => {
         
     })
 
-})
 
 let timeCounter = 0;
 setInterval(() => {
