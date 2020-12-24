@@ -23,7 +23,7 @@ tx_hashs = []
 
 for i in range(0, data.shape[1] - 1):
     
-    #labels.append(data.iloc[i]['fuzz_string'].split(',')[-1])
+    labels.append(data.iloc[i]['fuzz_string'].split(',')[-2])
     print(data.iloc[i]['fuzz_string'])
 
     tx_hashs.append(data.iloc[i]['tx_hash'])
