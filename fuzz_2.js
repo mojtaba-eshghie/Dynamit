@@ -204,13 +204,10 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                         // now let's execute this transaction
                         console.log("\n*********************************************\n*********************************************\n*********************************************\n")
                         console.log("doing: " + fuzzString)
-                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
-                            current_tx_hash = current_tx_obj["transactionHash"];
-                        })
-                        
 
+                        
                         // let's use prev_tx_hash here to get the debug_traceTransaction:
-                        cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${serieStringIndex}.json`
+                        cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${(parseInt(serieStringIndex)-1).toString()}.json`
                         exec(cmd, (error, stdout, stderr) => {
                             if (error) {
                                 console.log(`error: ${error.message}`);
@@ -222,13 +219,17 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                             }
                             console.log(`stdout: ${stdout}`);
                         });
-
-
-                        // let's set these for the next iteration
-                        prev_attacker_addr = contractTwoAddress
-                        prev_victim_addr = contractOneAddress
-                        prev_tx_hash = current_tx_hash
                         
+                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
+                            current_tx_hash = current_tx_obj["transactionHash"];
+
+                                // let's set these for the next iteration
+                            prev_attacker_addr = contractTwoAddress
+                            prev_victim_addr = contractOneAddress
+                            prev_tx_hash = current_tx_hash
+                            
+                        })
+                  
                     })
             } else {
                 console.log("this is the first transaction?!")
@@ -238,14 +239,17 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                 console.log("doing: " + fuzzString)
                 newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
                     current_tx_hash = current_tx_obj["transactionHash"];
+
+
+                    prev_attacker_addr = contractTwoAddress
+                    prev_victim_addr = contractOneAddress
+                    prev_tx_hash = current_tx_hash
+                    console.log(" ------------------------ We are inside tx callback -------------------")
+                    console.log("current tx hash is : " + current_tx_hash)
                 })
                 
 
                 
-
-                prev_attacker_addr = contractTwoAddress
-                prev_victim_addr = contractOneAddress
-                prev_tx_hash = current_tx_hash
             }
             
         }, txTimeCounter)
