@@ -36,6 +36,7 @@ let data = []
 let prev_victim_addr = null
 let prev_attacker_addr = null
 let prev_tx_hash = null
+let prev_tx_string_index = null
 let current_tx_hash = null
 let after_of_prev_tx_obj = null
 let before_of_curr_tx_obj = null
@@ -207,7 +208,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
 
                         
                         // let's use prev_tx_hash here to get the debug_traceTransaction:
-                        cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${(parseInt(serieStringIndex)-1).toString()}.json`
+                        cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${prev_tx_string_index}.json`
                         exec(cmd, (error, stdout, stderr) => {
                             if (error) {
                                 console.log(`error: ${error.message}`);
@@ -229,6 +230,8 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                             prev_tx_hash = current_tx_hash
                             
                         })
+
+                        prev_tx_string_index = serieStringIndex
                   
                     })
             } else {
@@ -246,6 +249,8 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                     prev_tx_hash = current_tx_hash
                     console.log(" ------------------------ We are inside tx callback -------------------")
                     console.log("current tx hash is : " + current_tx_hash)
+                    prev_tx_string_index = serieStringIndex 
+                    
                 })
                 
 
