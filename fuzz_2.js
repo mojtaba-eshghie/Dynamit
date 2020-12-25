@@ -226,6 +226,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                     })
             } else {
                 console.log("this is the first transaction?!")
+                console.log(prev_tx_hash)
                 // now let's execute this transaction
                 console.log("\n*******************-----*********************\n*********************************************\n*********************************************\n")
                 console.log("doing: " + fuzzString)
