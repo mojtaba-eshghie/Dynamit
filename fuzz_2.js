@@ -204,7 +204,10 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                         // now let's execute this transaction
                         console.log("\n*********************************************\n*********************************************\n*********************************************\n")
                         console.log("doing: " + fuzzString)
-                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]})
+                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
+                            current_tx_hash = current_tx_obj["transactionHash"];
+                        })
+                        
 
                         // let's use prev_tx_hash here to get the debug_traceTransaction:
                         cmd = `curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{"jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["${prev_tx_hash}", {}], "id":1}' > data/trace_${serieStringIndex}.json`
@@ -233,9 +236,8 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                 // now let's execute this transaction
                 console.log("\n*******************-----*********************\n*********************************************\n*********************************************\n")
                 console.log("doing: " + fuzzString)
-                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((arg) => {
-                    console.log("arg::::::::::::::::::::::::::::::::::::::::: ")
-                    console.log(arg)
+                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
+                    current_tx_hash = current_tx_obj["transactionHash"];
                 })
                 
 
