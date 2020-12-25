@@ -21,8 +21,8 @@ attacker_balance_deltas = []
 labels = []
 tx_hashs = []
 
-for i in range(0, data.shape[1] - 1):
-    
+for i in range(0, data.shape[0]):
+
     labels.append(data.iloc[i]['fuzz_string'].split(',')[-1])
 
     tx_hashs.append(data.iloc[i]['tx_hash'])
@@ -31,12 +31,13 @@ for i in range(0, data.shape[1] - 1):
 
     input_sizes.append(len(data.iloc[i]['input']))
 
-    if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']):
+
+    if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']) and data.iloc[i]['victim_balance_after_tx'] != '' and data.iloc[i]['victim_balance_before_tx'] != '':
         victim_balance_deltas.append(int(data.iloc[i]['victim_balance_after_tx']) - int(data.iloc[i]['victim_balance_before_tx']))
     else:
         victim_balance_deltas.append(np.nan)
     
-    if not pd.isna(data.iloc[i]['attacker_balance_after_tx']) and not pd.isna(data.iloc[i]['attacker_balance_before_tx']):
+    if not pd.isna(data.iloc[i]['attacker_balance_after_tx']) and not pd.isna(data.iloc[i]['attacker_balance_before_tx']) and data.iloc[i]['attacker_balance_after_tx'] != '' and data.iloc[i]['attacker_balance_after_tx'] != '':
         attacker_balance_deltas.append(int(data.iloc[i]['attacker_balance_after_tx']) - int(data.iloc[i]['attacker_balance_before_tx']))
     else:
         attacker_balance_deltas.append(np.nan)
