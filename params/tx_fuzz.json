@@ -1184,40 +1184,14 @@
         "label": "safe"
     },
     "21": {
-        "files": "",
+        "files": "8_safe_2.sol,8_safe_2_attacker.sol",
         "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi":  
-        },
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
+            "address": "0x897B3CcCa6BaB117180D8AF2e0555365E3e56da1",
             "abi": [
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
+                    "name": "fd",
                     "outputs": [
                         {
                             "name": "",
@@ -1232,7 +1206,7 @@
                     "constant": false,
                     "inputs": [
                         {
-                            "name": "_dao",
+                            "name": "_addr",
                             "type": "address"
                         }
                     ],
@@ -1243,6 +1217,26 @@
                     "type": "function"
                 },
                 {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
                     "payable": true,
                     "stateMutability": "payable",
                     "type": "fallback"
@@ -1250,8 +1244,74 @@
             ]
         },
         "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
+            "contract_name": "FreeDonate",
+            "address": "0x44E0A6E1cA94eadc837A6C51a990c561Bf48eDEA"
+        },
+        "label": "safe"
+    },
+    "22": {
+        "files": "8_safe_3.sol,8_safe_3_attacker.sol",
+        "attacker": {
+            "address": "0x1bFf574be2087Db571350eB3D87da5c815B8b2Aa",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "fd",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "FreeDonate",
+            "address": "0x3BF70d49C396905e4A41a95b7Fc1b6818A8a1630"
         },
         "label": "safe"
     },
