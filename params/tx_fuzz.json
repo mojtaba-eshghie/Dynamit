@@ -52,7 +52,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x9B689638F61EA6F9f05287887D9534FA57d5D02c"
@@ -112,7 +112,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x145180440918693c67F2eC038Fdc894a2892cc4b"
@@ -172,7 +172,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -232,7 +232,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0xFE1Fab3fd121c7020E69049CE8F82803D0f3Fb91"
@@ -284,36 +284,22 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "PIGGY_BANK",
             "address": "0x0CcEBaFd85B21D31450b032015B8e5032D72930C"
         },
         "label": "vul"
     },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
+    "6": {
+        "files": "2.sol,2_attacker_benign.sol",
         "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
+            "address": "0xd5708E17b94874a18650d18a18f80ad581fD70d4",
             "abi": [
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
+                    "name": "bank",
                     "outputs": [
                         {
                             "name": "",
@@ -328,7 +314,7 @@
                     "constant": false,
                     "inputs": [
                         {
-                            "name": "_dao",
+                            "name": "_addr",
                             "type": "address"
                         }
                     ],
@@ -339,12 +325,606 @@
                     "type": "function"
                 },
                 {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
                     "payable": true,
                     "stateMutability": "payable",
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
+        "victim": {
+            "contract_name": "PIGGY_BANK",
+            "address": "0xdEBF9a0c9f138854A6ade813d5300e2611Ad94a9"
+        },
+        "label": "safe"
+    },
+    "7": {
+        "files": "2_safe.sol,2_safe_attacker.sol",
+        "attacker": {
+            "address": "0xae7fc915F128b70B88468cC64D78927a065C7748",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "bank",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "PIGGY_BANK",
+            "address": "0x22B9C911e5FC6Cc79201d441EA083a4748AC9a58"
+        },
+        "label": "safe"
+    },
+    "8": {
+        "files": "3.sol,3_attacker.sol,vul",
+        "attacker": {
+            "address": "0x09bEFa535a284b668A1183F698d65dc2D87EeAf8",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "store",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "EtherStore",
+            "address": "0x421346b49f1A2039863e70b092427Bcb42Ff3B4E"
+        },
+        "label": "vul"
+    },
+    "9": {
+        "files": "3_safe.sol,3_safe_attacker.sol",
+        "attacker": {
+            "address": "0xd0804fac472d0fBCf6bBeF3B2153b919C7a49c15",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "store",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "EtherStore",
+            "address": "0x240DDD87bf18d7D553d63664feF21935639D1160"
+        },
+        "label": "safe"
+    },
+    "10": {
+        "files": "4.sol,4_attacker.sol",
+        "attacker": {
+            "address": "0x939F8f3B34FFfCD480B219103B04655DCf23cF33",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "bank",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Private_Bank",
+            "address": "0x5D1F4630578800421e0a94D8a107896fCC19EA26"
+        },
+        "label": "vul"
+    },
+    "11": {
+        "files": "4_safe.sol,4_safe_attacker.sol",
+        "attacker": {
+            "address": "0x7C1A27dEb4559881Fc1469bb3e76Af3877C3e528",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "bank",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Private_Bank",
+            "address": "0x4C1CeBE33fe3f82850f39273c2EEeC1D46ec67DF"
+        },
+        "label": "safe"
+    },
+    "12": {
+        "files": "4.sol,4_attacker_benign.sol",
+        "attacker": {
+            "address": "0xFc7F07b5aAB827a876B0bd6308086e0274c4eb00",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "bank",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Private_Bank",
+            "address": "0x47e9ee9B0B9c90BEd7C6cc085db698e7Df88CBDA"
+        },
+        "label": "safe"
+    },
+    "13": {
+        "files": "5.sol,5_attacker.sol",
+        "attacker": {
+            "address": "0x876Fcd654A672c0F33630d3cDd7dA23c0777ddd4",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "dd",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "DividendDistributor",
+            "address": "0xE23382015e5fB6d81100556580135b55ac82753a"
+        },
+        "label": "vul"
+    },
+    "14": {
+        "files": "5.sol,5_attacker_benign.sol",
+        "attacker": {
+            "address": "0x6bbF84801866957dDf72a37D490361D1F1b3CAe3",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "dd",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "DividendDistributor",
+            "address": "0x63F84875A3f885dC6D1d4dF74ba4Ad3b3cA56D0f"
+        },
+        "label": "safe"
+    },
+    "15": {
+        "files": "6.sol,6_attacker.sol",
+        "attacker": {
+            "address": "0x41D05344512efd8FEcB4eFE4740Bf81db804f7e6",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "tg",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "TokensGate",
+            "address": "0xbC257198D41693b3D1E70e9c1C5A00a756191651"
+        },
+        "label": "vul"
+    },
+    "16": {
+        "files": "6_safe.sol,6_safe_attacker.sol",
+        "attacker": {
+            "address": "0xe14d9B016707531F9B522b64eE0AEFE0B8BeE1f9",
+            "abi": [
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "tg",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "TokensGate",
+            "address": "0x7786B9B49a48B0f7fFDA89fC17D4EE548D9e3F89"
+        },
+        "label": "safe"
+    },
+    "17": {
+        "files": "6.sol,6_attacker_benign.sol",
+        "attacker": {
+            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
+            "abi": 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -404,7 +984,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -464,7 +1044,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -524,7 +1104,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -584,7 +1164,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -644,7 +1224,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -704,7 +1284,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -764,7 +1344,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -824,7 +1404,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -884,7 +1464,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -944,7 +1524,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -1004,7 +1584,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -1064,7 +1644,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -1124,7 +1704,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
+        },
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -1184,667 +1764,7 @@
                     "type": "fallback"
                 }
             ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
         },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
-        "victim": {
-            "contract_name": "Lottery",
-            "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
-        },
-        "label": "safe"
-    },
-    "3": {
-        "files": "1.sol,1_benign_attacker.sol",
-        "attacker": {
-            "address": "0x96222aAFB304Ea808249a0C71cD062fb0064a741",
-            "abi": [
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "dao",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "player",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "_dao",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        }, 
         "victim": {
             "contract_name": "Lottery",
             "address": "0x2b71794B2b0977dC790542F19DbAD20FaCAaAd4e"
@@ -1852,4 +1772,3 @@
         "label": "safe"
     }
 }
-
