@@ -21,12 +21,14 @@ let deploy = async (contractFileName, contractName, contractArguments) => {
 
         output = compiler(contractFileName)
 
-        //console.log(output.contracts)
+        
         
         var jsonInterface = JSON.parse(output.contracts[":"+contractName].interface)
         
         var data = output.contracts[":"+contractName].bytecode
         
+        console.log(jsonInterface)
+        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         
         var contract = new web3.eth.Contract(jsonInterface, {gasPrice: '12345678', from: accounts[0], value: 30000000000000000000})
         
@@ -41,7 +43,7 @@ let deploy = async (contractFileName, contractName, contractArguments) => {
         contract = res.contract
         accounts = res.accounts
 
-
+        /*
         return contract.deploy({data: data}).send({
             from: accounts[0],
             gas: 1500000,
@@ -50,6 +52,7 @@ let deploy = async (contractFileName, contractName, contractArguments) => {
         }).then(deployedContract => {
             return deployedContract.options.address
         })
+        */
         
         
         

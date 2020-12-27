@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.26;
 
 
 // I need 30 ethers for each tx :: one pair should be deployed for each

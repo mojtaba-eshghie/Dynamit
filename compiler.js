@@ -10,8 +10,6 @@ var compiler = (fileName) => {
     //var output = JSON.parse(solc.compile(JSON.stringify(input)));
     var output = solc.compile(file_content)
 
-    console.log(output)
-
     return output
 }
 
