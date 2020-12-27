@@ -10,8 +10,8 @@ let returnAccounts = async () => {
     })    
 }
 
-let deploy = async (contractFileName, contractName, contractArguments) => {
-    // later add the contractArguments part.
+let deploy = async (contractFileName, contractName, valueToSendToContract) => {
+    
 
     //TODO: add the support for passing arguments when creating the contract.
 
@@ -27,8 +27,6 @@ let deploy = async (contractFileName, contractName, contractArguments) => {
         
         var data = output.contracts[":"+contractName].bytecode
         
-        console.log(jsonInterface)
-        console.log('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
         
         var contract = new web3.eth.Contract(jsonInterface, {gasPrice: '12345678', from: accounts[0], value: 30000000000000000000})
         
@@ -43,16 +41,28 @@ let deploy = async (contractFileName, contractName, contractArguments) => {
         contract = res.contract
         accounts = res.accounts
 
-        /*
-        return contract.deploy({data: data}).send({
-            from: accounts[0],
-            gas: 1500000,
-            gasPrice: '3000000000'
-        }, function(error, transactionHash){
-        }).then(deployedContract => {
-            return deployedContract.options.address
-        })
-        */
+        if (valueToSendToContract) {
+            
+            return contract.deploy({data: data}).send({
+                from: accounts[0],
+                gas: 3000000,
+                gasPrice: '3000000000',
+                value: valueToSendToContract
+            }, function(error, transactionHash){
+            }).then(deployedContract => {
+                return deployedContract.options.address
+            })
+        } else {
+            return contract.deploy({data: data}).send({
+                from: accounts[0],
+                gas: 3000000,
+                gasPrice: '3000000000',
+            }, function(error, transactionHash){
+            }).then(deployedContract => {
+                return deployedContract.options.address
+            })
+        }
+        
         
         
         
