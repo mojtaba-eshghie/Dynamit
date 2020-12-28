@@ -7,8 +7,6 @@ let { exec } = require("child_process");
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-const numOfTXs = 45
-
 let seriesInfo = JSON.parse(fs.readFileSync("params/seriesInfo.json"))
 let runFuzzer = JSON.parse(fs.readFileSync("params/runFuzzer.json"))
 
@@ -267,8 +265,6 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
 
 
 
-
-
         console.log(contractOneAddress)
         console.log(contractTwoAddress)
         console.log("--------------\n\n")
@@ -405,5 +401,5 @@ setTimeout(() => {
 
 
     
-}, 3000000)
+}, 1300000)
 
