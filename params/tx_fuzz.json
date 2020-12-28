@@ -1,32 +1,84 @@
 {
     "26": {
-        "files": "safes.sol",
+        "files": "vulnerables.sol",
         "attacker": {
-            "address": "0x90C8dAFA75d0d91914d55FF8Ce273F9c1E7FA204",
+            "address": "0x036fAD7ca17916Daf31426118277ceaf8b3c3de2",
             "abi": [
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f5",
-                    "outputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f6",
-                    "outputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
                     "constant": false,
                     "inputs": [
                         {
-                            "name": "addr_",
+                            "name": "_addr",
                             "type": "address"
                         }
                     ],
@@ -37,22 +89,41 @@
                     "type": "function"
                 },
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f2",
-                    "outputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "sf",
+                    "name": "b_binary",
                     "outputs": [
                         {
                             "name": "",
-                            "type": "address"
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
                         }
                     ],
                     "payable": false,
@@ -62,16 +133,7 @@
                 {
                     "constant": false,
                     "inputs": [],
-                    "name": "f3",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f1",
+                    "name": "A",
                     "outputs": [],
                     "payable": false,
                     "stateMutability": "nonpayable",
@@ -80,24 +142,15 @@
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "checkpoint",
+                    "name": "e",
                     "outputs": [
                         {
                             "name": "",
-                            "type": "string"
+                            "type": "uint256"
                         }
                     ],
                     "payable": false,
                     "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f4",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
                     "type": "function"
                 },
                 {
@@ -114,39 +167,91 @@
             ]
         },
         "victim": {
-            "contract_name": "Safe",
-            "address": "0x0301aADD5EC7174f825A7EE9eA2CA7dB59E761b5"
+            "contract_name": "Vulnerable",
+            "address": "0xA3Eb59EBa08576262dc931C701BFc2a5DfF82881"
         },
-        "label": "safe"
+        "label": "vul"
     },
     "27": {
-        "files": "safes.sol",
+        "files": "vulnerables.sol",
         "attacker": {
-            "address": "0xC619Af160D6a6B50a83d58190BFea63670EB8b44",
+            "address": "0x5fA4F6621fdb234291C13A4621CC1C968C600e88",
             "abi": [
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f5",
-                    "outputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f6",
-                    "outputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
                     "constant": false,
                     "inputs": [
                         {
-                            "name": "addr_",
+                            "name": "_addr",
                             "type": "address"
                         }
                     ],
@@ -157,22 +262,41 @@
                     "type": "function"
                 },
                 {
-                    "constant": false,
+                    "constant": true,
                     "inputs": [],
-                    "name": "f2",
-                    "outputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
                     "payable": false,
-                    "stateMutability": "nonpayable",
+                    "stateMutability": "view",
                     "type": "function"
                 },
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "sf",
+                    "name": "b_binary",
                     "outputs": [
                         {
                             "name": "",
-                            "type": "address"
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
                         }
                     ],
                     "payable": false,
@@ -182,16 +306,7 @@
                 {
                     "constant": false,
                     "inputs": [],
-                    "name": "f3",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f1",
+                    "name": "A",
                     "outputs": [],
                     "payable": false,
                     "stateMutability": "nonpayable",
@@ -200,24 +315,15 @@
                 {
                     "constant": true,
                     "inputs": [],
-                    "name": "checkpoint",
+                    "name": "e",
                     "outputs": [
                         {
                             "name": "",
-                            "type": "string"
+                            "type": "uint256"
                         }
                     ],
                     "payable": false,
                     "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f4",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
                     "type": "function"
                 },
                 {
@@ -234,15 +340,15 @@
             ]
         },
         "victim": {
-            "contract_name": "Safe",
-            "address": "0x95b9197d78fb9B10291680d7cC20FADC4714631E"
+            "contract_name": "Vulnerable",
+            "address": "0x28c03269B272ddE1964B013E7BC6471f39A6CB3e"
         },
-        "label": "safe"
+        "label": "vul"
     },
     "28": {
         "files": "vulnerables.sol",
         "attacker": {
-            "address": "0xEB2ce1d03a4c8aA283BB06ceA98BADe070B47dA1",
+            "address": "0x99E8e23A0C5E5bA57D4Ec267e828E3e420A36b8D",
             "abi": [
                 {
                     "constant": true,
@@ -408,134 +514,14 @@
         },
         "victim": {
             "contract_name": "Vulnerable",
-            "address": "0x6Ea7c7991Ace1CA10C7701ab758F53399c90b661"
+            "address": "0x24b7871Fb646990F9989785122EA71Eb0BD04E43"
         },
         "label": "vul"
     },
     "29": {
-        "files": "safes.sol",
-        "attacker": {
-            "address": "0x94EF0fd421dAc26EA5d9C06D3382C6c11638abC0",
-            "abi": [
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f5",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f6",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [
-                        {
-                            "name": "addr_",
-                            "type": "address"
-                        }
-                    ],
-                    "name": "startAttack",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f2",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "sf",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "address"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f3",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f1",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "constant": true,
-                    "inputs": [],
-                    "name": "checkpoint",
-                    "outputs": [
-                        {
-                            "name": "",
-                            "type": "string"
-                        }
-                    ],
-                    "payable": false,
-                    "stateMutability": "view",
-                    "type": "function"
-                },
-                {
-                    "constant": false,
-                    "inputs": [],
-                    "name": "f4",
-                    "outputs": [],
-                    "payable": false,
-                    "stateMutability": "nonpayable",
-                    "type": "function"
-                },
-                {
-                    "inputs": [],
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "constructor"
-                },
-                {
-                    "payable": true,
-                    "stateMutability": "payable",
-                    "type": "fallback"
-                }
-            ]
-        },
-        "victim": {
-            "contract_name": "Safe",
-            "address": "0x88Fff9620868eccF08e1Bd64F3d02548A8FEdd26"
-        },
-        "label": "safe"
-    },
-    "30": {
         "files": "vulnerables.sol",
         "attacker": {
-            "address": "0xec79181756DaeD1df9F32b0404fbdCAD4B0A070d",
+            "address": "0x68F90B4a071752dC8790dA1C555585807bcdAf76",
             "abi": [
                 {
                     "constant": true,
@@ -701,14 +687,187 @@
         },
         "victim": {
             "contract_name": "Vulnerable",
-            "address": "0x963948AF839edfC63e56C19f27476e643728de8E"
+            "address": "0xDFd950f5680546Bbd804f6f71cadDe25ccC1DEAD"
+        },
+        "label": "vul"
+    },
+    "30": {
+        "files": "vulnerables.sol",
+        "attacker": {
+            "address": "0xF7158d20E1Bb611c5Bf9E34b51BcBeFe4Aefcc3C",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "b_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "A",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "e",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Vulnerable",
+            "address": "0x315ecDC44710F2f7E1c6faB8C96D02d074507248"
         },
         "label": "vul"
     },
     "31": {
         "files": "vulnerables.sol",
         "attacker": {
-            "address": "0x5eD386ecDc321C4A3c460A923964ce2Bc6ab0EC8",
+            "address": "0x0DB575D4726eC480DB1b6fF7C9659c99Ad6adF51",
             "abi": [
                 {
                     "constant": true,
@@ -874,7 +1033,699 @@
         },
         "victim": {
             "contract_name": "Vulnerable",
-            "address": "0xC8052c9E3B32Ed696Cb847C0C49361ecBe50e6B4"
+            "address": "0x1139D4B7aaC7861cb4026D35159561bd7CE25D2A"
+        },
+        "label": "vul"
+    },
+    "32": {
+        "files": "vulnerables.sol",
+        "attacker": {
+            "address": "0x4C90378f81281a47e19065A0D37377b07d2605bC",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "b_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "A",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "e",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Vulnerable",
+            "address": "0xdd0f24b4AC8240a3c985A0273Acd80547690854e"
+        },
+        "label": "vul"
+    },
+    "33": {
+        "files": "vulnerables.sol",
+        "attacker": {
+            "address": "0x05f574241269011A07961baa8b0bE9F03299B914",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "b_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "A",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "e",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Vulnerable",
+            "address": "0x061d90De5d3A21Fdf4dF2686D4b80a1B0025ae0F"
+        },
+        "label": "vul"
+    },
+    "34": {
+        "files": "vulnerables.sol",
+        "attacker": {
+            "address": "0x1771875A8fD781c376Dc43Ab7826e6A714d568e0",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "b_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "A",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "e",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Vulnerable",
+            "address": "0x7Bf4D7927c7b165Ed36167fa176E6036FA8CaAb9"
+        },
+        "label": "vul"
+    },
+    "35": {
+        "files": "vulnerables.sol",
+        "attacker": {
+            "address": "0x328b93b7bF69b035E60f24bAE3d364CD997639f4",
+            "abi": [
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "a",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "f",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "c_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "gv",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "address"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [
+                        {
+                            "name": "_addr",
+                            "type": "address"
+                        }
+                    ],
+                    "name": "startAttack",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "d_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "b_binary",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "theif_counter",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint64"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "constant": false,
+                    "inputs": [],
+                    "name": "A",
+                    "outputs": [],
+                    "payable": false,
+                    "stateMutability": "nonpayable",
+                    "type": "function"
+                },
+                {
+                    "constant": true,
+                    "inputs": [],
+                    "name": "e",
+                    "outputs": [
+                        {
+                            "name": "",
+                            "type": "uint256"
+                        }
+                    ],
+                    "payable": false,
+                    "stateMutability": "view",
+                    "type": "function"
+                },
+                {
+                    "inputs": [],
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "constructor"
+                },
+                {
+                    "payable": true,
+                    "stateMutability": "payable",
+                    "type": "fallback"
+                }
+            ]
+        },
+        "victim": {
+            "contract_name": "Vulnerable",
+            "address": "0x8b7bc89A6345Cdfb928d3d71e7f69f6587fCAF54"
         },
         "label": "vul"
     }

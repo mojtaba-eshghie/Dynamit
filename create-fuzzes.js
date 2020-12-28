@@ -7,7 +7,7 @@ const get_abi = require('./get-abi');
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-let numberOfTXsForEachContractSet = 3 // put 10 here
+let numberOfTXsForEachContractSet = 10 // put 10 here
 let safety = null;
 let file_name = null;
 let source_code = null;
@@ -15,12 +15,12 @@ let tx_array = []
 let current_generated_txs = 25;
 let lock = false;
 
-
+/*
 let files_to_use = [
     {
         file_name: 'vulnerables.sol', 
         mode: 'vul',
-        value_for_sending_to_victim: 30000000000000000000
+        value_for_sending_to_victim: 100000000000000000000
     },
     {
         file_name: 'safes.sol',
@@ -28,7 +28,15 @@ let files_to_use = [
         value_for_sending_to_victim: 10000000000000000000
     }
 ]
+*/
 
+let files_to_use = [
+    {
+        file_name: 'vulnerables.sol', 
+        mode: 'vul',
+        value_for_sending_to_victim: 100000000000000000000
+    },
+]
 
 vulnerable_set_attacker_abi = get_abi('vulnerables.sol');
 safe_set_attacker_abi = get_abi('safes.sol');
