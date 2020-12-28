@@ -43,11 +43,11 @@ let makeCreateTXFuzz = () => {
 
         if (safety == "vul") {
             
-            deploy(file_name, 'Vulnerable', file_object['value_for_sending_to_victim'])
+            deploy('vulnerables.sol', 'Vulnerable', file_object['value_for_sending_to_victim'])
                 .then(async (victim_addr) => {
                     return {
                         victim_addr: victim_addr,
-                        attacker_addr: await deploy(file_name, 'GiveMeEverything')
+                        attacker_addr: await deploy('vulnerables.sol', 'GiveMeEverything')
                     };
                 })
                 .then(addr_object => {
@@ -90,11 +90,11 @@ let makeCreateTXFuzz = () => {
     
         } else if (safety == "safe") {
 
-            deploy(file_name, 'Safe', file_object['value_for_sending_to_victim'])
+            deploy('safes.sol', 'Safe', file_object['value_for_sending_to_victim'])
                 .then(async (victim_addr) => {
                     return {
                         victim_addr: victim_addr,
-                        attacker_addr: await deploy(file_name, 'GiveMeEverything')
+                        attacker_addr: await deploy('safes.sol', 'GiveMeEverything')
                     };
                 })
                 .then(addr_object => {

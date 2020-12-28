@@ -44,6 +44,8 @@ let txBalanceInfo = Object()
 
 
 
+
+
     
 Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
 
@@ -85,7 +87,9 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
     
     
     let randAcountIndex = Math.floor(Math.random() * 5)
-    let randGasPrice = '12345' + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString()
+    //let randGasPrice = '12345' + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString()
+    let randGasPrice = '123456789'
+    
     console.log('rand act index:')
     console.log(randAcountIndex)
     console.log('rand gas price:')
