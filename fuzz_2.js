@@ -86,8 +86,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
     
     let randAcountIndex = Math.floor(Math.random() * 5)
     //let randGasPrice = '12345' + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString() + Math.floor(Math.random() * 9).toString()
-    let randGasPrice = '123456789'
-    
+    let randGasPrice = '12345678'
     console.log('rand act index:')
     console.log(randAcountIndex)
     console.log('rand gas price:')
@@ -107,14 +106,15 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
             */
         })
         .on("data", (res) => {
-            console.log(">>>>> data: ")
+            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n")
+            console.log(">>>>> res: ")
             console.log(res);
             console.log("=====================================\n")
             
             web3.eth.getTransaction(res).then(tx => {
                 //console.log(tx)
 
-                if (tx.from == accounts[randAcountIndex] && tx.to == contractTwoAddress && tx.gasPrice == randGasPrice) {
+                if (tx.from == accounts[randAcountIndex] && tx.to == contractTwoAddress) {
                     
                         
                             
@@ -152,7 +152,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
         
 
         let newAttakcerInstance = new web3.eth.Contract(abi, contractTwoAddress, {
-            gasPrice: randGasPrice, from: accounts[randAcountIndex]
+            from: accounts[randAcountIndex]
         })
         
         setTimeout(() => {
@@ -169,10 +169,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                         }
                     })
                     .then((bal_obj) => {
-                        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
-                    
-                        console.log(bal_obj)
-                        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                        
                         after_of_prev_tx_obj = bal_obj
                     })
                     .then(async () => {
@@ -185,9 +182,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                         }
                     })
                     .then((bal_obj) => {
-                        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
-                        console.log(bal_obj)
-                        console.log("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n")
+                        
                         before_of_curr_tx_obj = bal_obj
                         
                         if (txBalanceInfo[current_tx_hash]) {
@@ -205,7 +200,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                     })
                     .then(() => {
                         // now let's execute this transaction
-                        console.log("\n*********************************************\n*********************************************\n*********************************************\n")
+                        
                         console.log("doing: " + fuzzString)
 
                         
@@ -223,7 +218,15 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                             console.log(`stdout: ${stdout}`);
                         });
                         
-                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
+                        newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex], 
+                            gas: 3000000,
+                            handleRevert:true
+                        }).on("error", (error) => {
+                            console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n ===============================================")
+                            console.log(error)
+                            console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n ===============================================")
+                        })
+                        .then((current_tx_obj) => {
                             current_tx_hash = current_tx_obj["transactionHash"];
 
                                 // let's set these for the next iteration
@@ -242,7 +245,16 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                 // now let's execute this transaction
                 console.log("\n*******************-----*********************\n*********************************************\n*********************************************\n")
                 console.log("doing: " + fuzzString)
-                newAttakcerInstance.methods.startAttack(contractOneAddress).send({from:accounts[randAcountIndex]}).then((current_tx_obj) => {
+                newAttakcerInstance.methods.startAttack(contractOneAddress).send({
+                    from:accounts[randAcountIndex],
+                    gas: 3000000,
+                    handleRevert:true
+                }).on("error", (error) => {
+                    console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n ===============================================")
+                    console.log(error)
+                    console.log("++++++++++++++++++++++++++++++++++++++++++++++++++++++++ \n ===============================================")
+                })
+                .then((current_tx_obj) => {
                     current_tx_hash = current_tx_obj["transactionHash"];
 
 
@@ -260,7 +272,7 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
             }
             
         }, txTimeCounter)
-        txTimeCounter = txTimeCounter + 60000
+        txTimeCounter = txTimeCounter + 30000
 
 
 
@@ -293,6 +305,9 @@ setTimeout(() => {
     web3.eth.getPendingTransactions().then((pendingTXs) => {
         if (pendingTXs.length == 0){
             // no pending tx, assuming that everything is over
+            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n")
+            console.log(data)
+            console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n")
             csvWriter
                 .writeRecords(data)
                     .then(() => {
@@ -401,5 +416,5 @@ setTimeout(() => {
 
 
     
-}, 1300000)
+}, 200000)
 
