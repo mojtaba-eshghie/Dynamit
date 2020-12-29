@@ -34,14 +34,14 @@ process.argv.forEach((val, index, array) => {
                 console.log(sc_balance_object)
                 fs.writeFileSync("data/sc-balances-before-exec.json", JSON.stringify(sc_balance_object))
                 console.log("Just wrote the balance information to sc-balances-before-exec.json file.")
-            }, 3000)    
+            }, 10000)    
             
         } else if (val == "after") {
             setTimeout(() => {
                 console.log(sc_balance_object)
                 fs.writeFileSync("data/sc-balances-after-exec.json", JSON.stringify(sc_balance_object))
                 console.log("Just wrote the balance information to sc-balances-after-exec.json file.")
-            }, 3000) 
+            }, 10000) 
         }
     }    
 });
