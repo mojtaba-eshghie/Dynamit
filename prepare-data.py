@@ -4,6 +4,7 @@ import csv
 import pandas as pd
 import numpy as np
 import json
+import subprocess
 
 '''
 with open('data/final.csv', 'r') as final_csv:
@@ -28,8 +29,6 @@ labels = []
 tx_hashs = []
 call_stack_depths = []
 
-print(data)
-
 '''
 for sc_address, before_balance in before_exec_sc_data.items():
     
@@ -38,35 +37,36 @@ for sc_address, before_balance in before_exec_sc_data.items():
 for i in range(0, data.shape[0]):
 
     labels.append(data.iloc[i]['fuzz_string'].split(',')[-2])
-
+    
+    
     tx_hashs.append(data.iloc[i]['tx_hash'])
     
     gas_used.append(int(data.iloc[i]['gas_used']))
 
 
 
-    # victim_balance_deltas
+    '''
+    from => is the attacker
+    to => is the victim
+    '''
+    attacker_addr = data.iloc[i]['from']
+    victim_addr = data.iloc[i]['to']
 
+    victim_balance_deltas.append(int(after_exec_sc_data[victim_addr]) - int(before_exec_sc_data[victim_addr]))
+    attacker_balance_deltas.append(int(after_exec_sc_data[attacker_addr]) - int(before_exec_sc_data[attacker_addr]))
 
+    
 
-    # attacker_balance_deltas
 
 
 
     # call_stack_depths
+    index = str(i + 1)
+    result = subprocess.run(["./compare.py", index], stdout=subprocess.PIPE)
+    call_stack_depths.append(float(result.stdout))
 
 
-    '''
-    if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']) and data.iloc[i]['victim_balance_after_tx'] != '' and data.iloc[i]['victim_balance_before_tx'] != '':
-        victim_balance_deltas.append(int(data.iloc[i]['victim_balance_after_tx']) - int(data.iloc[i]['victim_balance_before_tx']))
-    else:
-        victim_balance_deltas.append(np.nan)
-    
-    if not pd.isna(data.iloc[i]['attacker_balance_after_tx']) and not pd.isna(data.iloc[i]['attacker_balance_before_tx']) and data.iloc[i]['attacker_balance_after_tx'] != '' and data.iloc[i]['attacker_balance_after_tx'] != '':
-        attacker_balance_deltas.append(int(data.iloc[i]['attacker_balance_after_tx']) - int(data.iloc[i]['attacker_balance_before_tx']))
-    else:
-        attacker_balance_deltas.append(np.nan)
-    '''
+    print('Data point added for tx #{}'.format(index))
 
 
 output_df = pd.DataFrame({
@@ -74,7 +74,9 @@ output_df = pd.DataFrame({
     'gas_used': gas_used,
     'victim_balance_delta': victim_balance_deltas,
     'attacker_balance_delta': attacker_balance_deltas,
+    'call_stack_depth': call_stack_depths, 
     'label': labels
 })
 
 output_df.to_csv('data/final_prepared.csv', index=True)
+print('Successfully store the final_prepared.csv file')
