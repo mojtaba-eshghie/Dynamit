@@ -19,7 +19,6 @@ sc_balances_after_file = open('data/sc-balances-after-exec.json')
 before_exec_sc_data = json.load(sc_balances_before_file)
 after_exec_sc_data = json.load(sc_balances_after_file)
 
-print(before_exec_sc_data)
 
 gas_used = []
 input_sizes = []
@@ -28,6 +27,13 @@ attacker_balance_deltas = []
 labels = []
 tx_hashs = []
 call_stack_depths = []
+
+print(data)
+
+'''
+for sc_address, before_balance in before_exec_sc_data.items():
+    
+'''
 
 for i in range(0, data.shape[0]):
 

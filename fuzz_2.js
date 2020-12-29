@@ -119,8 +119,8 @@ Object.entries(tx_fuzz).forEach(([key, tx_params]) => {
                         
                             
                     data.push({
-                        "from": tx.from,
-                        "to": tx.to,
+                        "from": contractTwoAddress,
+                        "to": contractOneAddress,
                         "value": tx.value,
                         "gas": tx.gas,
                         "input": tx.input,
