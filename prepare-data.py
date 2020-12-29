@@ -23,15 +23,15 @@ tx_hashs = []
 
 for i in range(0, data.shape[0]):
 
-    labels.append(data.iloc[i]['fuzz_string'].split(',')[-1])
+    labels.append(data.iloc[i]['fuzz_string'].split(',')[-2])
 
     tx_hashs.append(data.iloc[i]['tx_hash'])
-
+    
     gas_used.append(int(data.iloc[i]['gas_used']))
 
 
 
-
+    
     if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']) and data.iloc[i]['victim_balance_after_tx'] != '' and data.iloc[i]['victim_balance_before_tx'] != '':
         victim_balance_deltas.append(int(data.iloc[i]['victim_balance_after_tx']) - int(data.iloc[i]['victim_balance_before_tx']))
     else:
