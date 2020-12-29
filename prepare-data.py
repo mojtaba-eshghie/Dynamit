@@ -14,7 +14,7 @@ with open('data/final.csv', 'r') as final_csv:
 data = pd.read_csv('data/final.csv')
 #print(data.iloc[0])
 
-gas_diffs = []
+gas_used = []
 input_sizes = []
 victim_balance_deltas = []
 attacker_balance_deltas = []
@@ -27,9 +27,9 @@ for i in range(0, data.shape[0]):
 
     tx_hashs.append(data.iloc[i]['tx_hash'])
 
-    gas_diffs.append(int(data.iloc[i]['gas']) - int(data.iloc[i]['gas_used']))
+    gas_used.append(int(data.iloc[i]['gas_used']))
 
-    input_sizes.append(len(data.iloc[i]['input']))
+
 
 
     if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']) and data.iloc[i]['victim_balance_after_tx'] != '' and data.iloc[i]['victim_balance_before_tx'] != '':
@@ -45,8 +45,7 @@ for i in range(0, data.shape[0]):
 
 output_df = pd.DataFrame({
     'tx_hash': tx_hashs,
-    'gas_diff': gas_diffs,
-    'input_size': input_sizes,
+    'gas_used': gas_used,
     'victim_balance_delta': victim_balance_deltas,
     'attacker_balance_delta': attacker_balance_deltas,
     'label': labels
