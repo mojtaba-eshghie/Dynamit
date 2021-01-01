@@ -145,9 +145,8 @@ let makeCreateTXFuzz = () => {
 
 
 for (var i = 1; i <= numberOfTXsForEachContractSet; i++) {
-
     setTimeout(() => {
-        console.log(`*********** Creating new transaction pair #${i}*************`)
+        console.log(`*********** Creating new transaction pair ************`)
         makeCreateTXFuzz()
     }, fuzzCreationTime)
     fuzzCreationTime = fuzzCreationTime + 15000
