@@ -14,6 +14,7 @@ let source_code = null;
 let tx_array = []
 let current_generated_txs = 25;
 let lock = false;
+let fuzzCreationTime = 0;
 
 
 let files_to_use = [
@@ -144,7 +145,12 @@ let makeCreateTXFuzz = () => {
 
 
 for (var i = 1; i <= numberOfTXsForEachContractSet; i++) {
-    makeCreateTXFuzz()
+
+    setTimeout(() => {
+        console.log(`*********** Creating new transaction pair #${i}*************`)
+        makeCreateTXFuzz()
+    }, fuzzCreationTime)
+    fuzzCreationTime = fuzzCreationTime + 15000
 }
 
 
