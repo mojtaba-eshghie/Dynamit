@@ -63,7 +63,9 @@ for i in range(0, data.shape[0]):
     # call_stack_depths
     index = str(i + 1)
     print(index)
+    
     result = subprocess.run(["./compare.py", index], stdout=subprocess.PIPE)
+
     call_stack_depths.append(float(result.stdout))
 
 

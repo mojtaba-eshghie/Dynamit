@@ -7,7 +7,7 @@ const get_abi = require('./get-abi');
 
 let web3 = new Web3(Web3.givenProvider || "ws://localhost:33333");
 
-let numberOfTXsForEachContractSet = 40// put 10 here
+let numberOfTXsForEachContractSet = 200// put 10 here
 let safety = null;
 let file_name = null;
 let source_code = null;
