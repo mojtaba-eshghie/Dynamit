@@ -3,6 +3,8 @@
 import csv
 import pandas as pd
 import numpy as np
+import json
+import subprocess
 
 '''
 with open('data/final.csv', 'r') as final_csv:
@@ -12,43 +14,72 @@ with open('data/final.csv', 'r') as final_csv:
         print(row)
 '''
 data = pd.read_csv('data/final.csv')
-#print(data.iloc[0])
+sc_balances_before_file = open('data/sc-balances-before-exec.json')
+sc_balances_after_file = open('data/sc-balances-after-exec.json')
 
-gas_diffs = []
+before_exec_sc_data = json.load(sc_balances_before_file)
+after_exec_sc_data = json.load(sc_balances_after_file)
+
+
+gas_used = []
 input_sizes = []
 victim_balance_deltas = []
 attacker_balance_deltas = []
 labels = []
 tx_hashs = []
+call_stack_depths = []
 
-for i in range(0, data.shape[1] - 1):
+'''
+for sc_address, before_balance in before_exec_sc_data.items():
     
-    labels.append(data.iloc[i]['fuzz_string'].split(',')[-1])
+'''
 
+for i in range(0, data.shape[0]):
+
+    labels.append(data.iloc[i]['fuzz_string'].split(',')[-2])
+    
+    
     tx_hashs.append(data.iloc[i]['tx_hash'])
-
-    gas_diffs.append(int(data.iloc[i]['gas']) - int(data.iloc[i]['gas_used']))
-
-    input_sizes.append(len(data.iloc[i]['input']))
-
-    if not pd.isna(data.iloc[i]['victim_balance_after_tx']) and not pd.isna(data.iloc[i]['victim_balance_before_tx']):
-        victim_balance_deltas.append(int(data.iloc[i]['victim_balance_after_tx']) - int(data.iloc[i]['victim_balance_before_tx']))
-    else:
-        victim_balance_deltas.append(np.nan)
     
-    if not pd.isna(data.iloc[i]['attacker_balance_after_tx']) and not pd.isna(data.iloc[i]['attacker_balance_before_tx']):
-        attacker_balance_deltas.append(int(data.iloc[i]['attacker_balance_after_tx']) - int(data.iloc[i]['attacker_balance_before_tx']))
-    else:
-        attacker_balance_deltas.append(np.nan)
+    gas_used.append(int(data.iloc[i]['gas_used']))
+
+
+
+    '''
+    from => is the attacker
+    to => is the victim
+    '''
+    attacker_addr = data.iloc[i]['from']
+    victim_addr = data.iloc[i]['to']
+
+    victim_balance_deltas.append(int(after_exec_sc_data[victim_addr]) - int(before_exec_sc_data[victim_addr]))
+    attacker_balance_deltas.append(int(after_exec_sc_data[attacker_addr]) - int(before_exec_sc_data[attacker_addr]))
+
+    
+
+
+
+
+    # call_stack_depths
+    index = str(i + 1)
+    print(index)
+    
+    result = subprocess.run(["./compare.py", index], stdout=subprocess.PIPE)
+
+    call_stack_depths.append(float(result.stdout))
+
+
+    print('Data point added for tx #{}'.format(index))
 
 
 output_df = pd.DataFrame({
     'tx_hash': tx_hashs,
-    'gas_diff': gas_diffs,
-    'input_size': input_sizes,
+    'gas_used': gas_used,
     'victim_balance_delta': victim_balance_deltas,
     'attacker_balance_delta': attacker_balance_deltas,
+    'call_stack_depth': call_stack_depths, 
     'label': labels
 })
 
 output_df.to_csv('data/final_prepared.csv', index=True)
+print('Successfully store the final_prepared.csv file')
