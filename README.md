@@ -1,3 +1,3 @@
-# Dynamit: Dynamic Vulnerability Detection ofEthereum Smart Contracts Using Machine Learning
+# Dynamit: Dynamic Vulnerability Detection of Ethereum Smart Contracts Using Machine Learning
 
 
