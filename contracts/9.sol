@@ -86,7 +86,6 @@ contract ERC20nator is StandardToken, Ownable {
     event requestedRedeem(address indexed requestor, uint amount);
     event redeemed(address redeemer, uint amount);
     
-    // mojtaba: 
     bool public flag = false;
     
     

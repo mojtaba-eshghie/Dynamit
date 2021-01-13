@@ -88,7 +88,6 @@ contract ERC20nator is StandardToken, Ownable {
     
     
     
-    // mojtaba: 
     bool public flag = false;
     uint public counter = 0;
     uint public callBackCounter = 0;
