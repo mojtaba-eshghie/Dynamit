@@ -35,7 +35,7 @@ The monitor has the duty of collecting metadata of particular smart contracts th
 Running monitor is more complicated than just executing the nodejs application as it needs a blockchain environment with deployed smart contracts to monitor. Here, we assume that you have a Go-Ethereum installation locally to create your own private Ethereum network for the sake of running these tests.
 To install the required packages for the monitor use the following command while you are in root of repository (recommended version of nodejs is 12.x):
 
-    npm install
+    `npm install`
 
 Afterwards, you can start using the nodejs application of the monitor. 
 The workflow of the monitor is:
@@ -45,11 +45,11 @@ The workflow of the monitor is:
 3. Afterwards, based on the information of the deployed contracts you need to update the contents of `tx_fuzz.json` file. 
 5. Before starting the monitor and initiating the transactions, we should collect some information about the contracts right away. This is done by running the following command (it will store the balance of the deployed contracts before running the experiment):
 
-    node get-sc-balance.js before
+    `node get-sc-balance.js before`
 
 4. You can start running the monitor by running `fuzz_2.json` file. This monitor will listen to the specified blockchain network (as you should change the parameters at top of the file) to receive any information regarding the contracts you have given to it through the `tx_fuzz.json` file. After finishing the experiment, the monitor will automatically save several trace files (e.g. `data/trace_i.json`) and an `out.csv` file.
 5. After the experiment finishes, you need to run the following command to probe the balance of the smart contracts after the transactions have been issued:
 
-    node get-sc-balance.js after
+    `node get-sc-balance.js after`
 
 6. Now you need to execute `get-tx-info.js` which probes the blockchain to get more information about the transactions (and it uses the already gathered `data/out.csv` file). The resulting file will be `data/final.csv` that will be used by the Detector (more precisely the `prepare-data2.py` that preprocesses this final.csv file and creates `final_prepared.csv` file which is then used by our models as `transaction.csv`)
