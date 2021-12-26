@@ -1,4 +1,6 @@
 # Dynamit: Dynamic Vulnerability Detection on Smart Contracts Using Machine Learning
+![DOI](https://img.shields.io/badge/DOI-10.1145%2F3463274.3463348-informational)
+
 
 ## Detector
 As explained the paper, the detector is based on a machine learning model to detect the harmful transactions.
