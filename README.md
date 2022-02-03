@@ -16,7 +16,7 @@ The system consists of two subsystems:
 
 
 ## Detector subsystem
-As explained the paper, the detector is based on a machine learning model to detect the harmful transactions.
+As explained in the paper, the detector is based on a machine learning model to detect the harmful transactions.
 The files related to the detector are the following:
 * prepare-data2.py in the main directory of the repository
 * The `detector` subdirectory
