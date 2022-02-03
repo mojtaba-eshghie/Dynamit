@@ -1,7 +1,9 @@
 
 
-# Dynamit: Dynamic Vulnerability Detection on Smart Contracts Using Machine Learning
+# [Dynamit: Dynamic Vulnerability Detection on Smart Contracts Using Machine Learning][https://dl.acm.org/doi/abs/10.1145/3463274.3463348]
 ![DOI](https://img.shields.io/badge/DOI-10.1145%2F3463274.3463348-informational)
+
+
 
 
 ## Detector subsystem
