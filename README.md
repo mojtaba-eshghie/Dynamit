@@ -1,8 +1,10 @@
+
+
 # Dynamit: Dynamic Vulnerability Detection on Smart Contracts Using Machine Learning
 ![DOI](https://img.shields.io/badge/DOI-10.1145%2F3463274.3463348-informational)
 
 
-## Detector
+## Detector subsystem
 As explained the paper, the detector is based on a machine learning model to detect the harmful transactions.
 The files related to the detector are the following:
 * prepare-data2.py in the main directory of the repository
@@ -31,7 +33,7 @@ To have consistent results throught the experiments we used same random seeds fo
 We scaled all data in all of our experiments before building the model using Sikitlearn's StandardScaler.
 
 
-## Monitor
+## Monitor subsystem
 The monitor has the duty of collecting metadata of particular smart contracts that we assign it to. The monitor can be used to connect to any Ethereum network including the mainnet, testnet as well as private Ethereum networks. Monitor needs this connection to probe the blockchain. The target blockchain network has to support websocket provider since web3js library that is used by monitor only can subscribe to events in blockchain through websocket provider.
 
 Running monitor is more complicated than just executing the nodejs application as it needs a blockchain environment with deployed smart contracts to monitor. Here, we assume that you have a Go-Ethereum installation locally to create your own private Ethereum network for the sake of running these tests.
