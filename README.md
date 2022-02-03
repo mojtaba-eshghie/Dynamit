@@ -5,6 +5,15 @@
 https://dl.acm.org/doi/abs/10.1145/3463274.3463348
 
 
+## Description
+Dynamit is a monitoring framework to detect reentrancy vulnerabilities in Ethereum smart contracts. The novelty of our framework is that it relies only on transaction metadata and balance data from the blockchain system; our approach requires no domain knowledge, code instrumentation, or special execution environment. Dynamit extracts features from transaction data and uses a machine learning model to classify transactions as benign or harmful. Therefore, not only can we find the contracts that are vulnerable to reentrancy attacks, but we also get an execution trace that reproduces the attack. Using a random forest classifier, our model achieved more than 90 percent accuracy on 105 transactions, showing the potential of our technique.
+
+# Installing and Using the Framework
+The system consists of two subsystems:
+1. Monitor subsystem
+2. Detector subsystem
+
+
 
 ## Detector subsystem
 As explained the paper, the detector is based on a machine learning model to detect the harmful transactions.
