@@ -73,6 +73,7 @@ The workflow of the monitor is:
 # Citing our work (Dynamit)
 Please use the following bibtex entry to cite us:
     `
+    
     @inproceedings{eshghieDynamicVulnerabilityDetection2021e,
         address = {New York, NY, USA},
         series = {{EASE} 2021},
