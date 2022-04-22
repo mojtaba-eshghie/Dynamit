@@ -75,7 +75,6 @@ Please use the following bibtex entry to cite us:
     `
     
     @inproceedings{eshghieDynamicVulnerabilityDetection2021e,
-        address = {New York, NY, USA},
         series = {{EASE} 2021},
         title = {Dynamic {Vulnerability} {Detection} on {Smart} {Contracts} {Using} {Machine} {Learning}},
         isbn = {978-1-4503-9053-8},
@@ -89,7 +88,6 @@ Please use the following bibtex entry to cite us:
         month = jun,
         year = {2021},
         keywords = {Blockchain, Ethereum, Machine Learning for Dynamic Software Analysis, Smart Contracts, Vulnerability Detection},
-        pages = {305--312},
-        file = {Full Text PDF:/Users/mojtabaeshghie/Zotero/storage/AGRM8Q9Y/Eshghie et al. - 2021 - Dynamic Vulnerability Detection on Smart Contracts.pdf:application/pdf},
+        pages = {305--312}
     }
     `
