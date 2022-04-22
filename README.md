@@ -72,7 +72,7 @@ The workflow of the monitor is:
 
 # Citing our work (Dynamit)
 Please use the following bibtex entry to cite us:
-    `
+    
     
     @inproceedings{eshghieDynamicVulnerabilityDetection2021e,
         series = {{EASE} 2021},
@@ -90,4 +90,4 @@ Please use the following bibtex entry to cite us:
         keywords = {Blockchain, Ethereum, Machine Learning for Dynamic Software Analysis, Smart Contracts, Vulnerability Detection},
         pages = {305--312}
     }
-    `
+    
