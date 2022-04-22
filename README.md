@@ -68,3 +68,27 @@ The workflow of the monitor is:
     `node get-sc-balance.js after`
 
 6. Now you need to execute `get-tx-info.js` which probes the blockchain to get more information about the transactions (and it uses the already gathered `data/out.csv` file). The resulting file will be `data/final.csv` that will be used by the Detector (more precisely the `prepare-data2.py` that preprocesses this final.csv file and creates `final_prepared.csv` file which is then used by our models as `transaction.csv`)
+
+
+# Citing our work (Dynamit)
+Please use the following bibtex entry to cite us:
+    `
+    @inproceedings{eshghieDynamicVulnerabilityDetection2021e,
+        address = {New York, NY, USA},
+        series = {{EASE} 2021},
+        title = {Dynamic {Vulnerability} {Detection} on {Smart} {Contracts} {Using} {Machine} {Learning}},
+        isbn = {978-1-4503-9053-8},
+        url = {https://doi.org/10.1145/3463274.3463348},
+        doi = {10.1145/3463274.3463348},
+        abstract = {In this work we propose Dynamit, a monitoring framework to detect reentrancy vulnerabilities in Ethereum smart contracts. The novelty of our framework is that it relies only on transaction metadata and balance data from the blockchain system; our approach requires no domain knowledge, code instrumentation, or special execution environment. Dynamit extracts features from transaction data and uses a machine learning model to classify transactions as benign or harmful. Therefore, not only can we find the contracts that are vulnerable to reentrancy attacks, but we also get an execution trace that reproduces the attack. Using a random forest classifier, our model achieved more than 90 percent accuracy on 105 transactions, showing the potential of our technique.},
+        urldate = {2022-04-22},
+        booktitle = {Evaluation and {Assessment} in {Software} {Engineering}},
+        publisher = {Association for Computing Machinery},
+        author = {Eshghie, Mojtaba and Artho, Cyrille and Gurov, Dilian},
+        month = jun,
+        year = {2021},
+        keywords = {Blockchain, Ethereum, Machine Learning for Dynamic Software Analysis, Smart Contracts, Vulnerability Detection},
+        pages = {305--312},
+        file = {Full Text PDF:/Users/mojtabaeshghie/Zotero/storage/AGRM8Q9Y/Eshghie et al. - 2021 - Dynamic Vulnerability Detection on Smart Contracts.pdf:application/pdf},
+    }
+    `
