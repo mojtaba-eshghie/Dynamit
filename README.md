@@ -74,6 +74,7 @@ The workflow of the monitor is:
 Please use the following bibtex entry to cite us:
     `
     @inproceedings{eshghieDynamicVulnerabilityDetection2021e,
+    
         address = {New York, NY, USA},
         series = {{EASE} 2021},
         title = {Dynamic {Vulnerability} {Detection} on {Smart} {Contracts} {Using} {Machine} {Learning}},
